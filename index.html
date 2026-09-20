@@ -40,7 +40,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .section-head span{font-size:12px;color:var(--muted)}
 .grid{display:flex;flex-direction:column;gap:10px}
 .card{display:grid;grid-template-columns:72px 1fr auto;gap:10px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px}
-.card img{width:72px;height:72px;object-fit:cover;border-radius:12px;background:#000}
+.card img{width:72px;height:72px;object-fit:cover;border-radius:12px;background:#000;image-orientation:none}
 .card .name{font-weight:700;font-size:13.5px;line-height:1.3}
 .card .meta{font-size:11.5px;color:var(--muted);margin-top:2px}
 .card .deal{font-size:12px;color:var(--gold);font-weight:700;margin-top:4px}
@@ -130,8 +130,24 @@ button,input,select,textarea{font:inherit;color:inherit}
         <option>קריית חיים</option><option>קריית ים</option><option>קריית מוצקין</option><option>קריית ביאליק</option>
       </select>
       <label for="street">רחוב ומספר</label><input id="street" autocomplete="street-address" required placeholder="למשל דגניה 30"/>
-      <label for="floor">קומה (רשות)</label><input id="floor" placeholder="3 / קרקע"/>
-      <label for="notes">הערות / טעם מועדף (רשות)</label><textarea id="notes" placeholder="טעם, קוד בניין, שעה…"></textarea>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <div>
+          <label for="entrance">כניסה (רשות)</label>
+          <select id="entrance">
+            <option value="">אין / לא רלוונטי</option>
+            <option>כניסה א׳</option>
+            <option>כניסה ב׳</option>
+            <option>כניסה ג׳</option>
+            <option>כניסה ד׳</option>
+            <option>כניסה ה׳</option>
+          </select>
+        </div>
+        <div>
+          <label for="floor">קומה (רשות)</label>
+          <input id="floor" placeholder="3 / קרקע"/>
+        </div>
+      </div>
+      <label for="notes">הערות / טעם מועדף (רשות)</label><textarea id="notes" placeholder="טעם, קוד בניין, שעה, כניסה אחרת…"></textarea>
     </div>
     <div class="pay-note">שולחים בוואטסאפ — מאשרים מלאי ומחיר סופי. <strong>בלי תשלום בדף.</strong></div>
     <div class="actions">
@@ -247,13 +263,14 @@ function buildOrderMsg(){
   const phone=document.getElementById('phone').value.trim();
   const city=document.getElementById('city').value;
   const street=document.getElementById('street').value.trim();
+  const entrance=document.getElementById('entrance').value.trim();
   const floor=document.getElementById('floor').value.trim();
   const notes=document.getElementById('notes').value.trim();
   const ids=Object.keys(cart);
   if(!ids.length){ alert('הסל ריק'); return null; }
   if(!name||!phone||!city||!street){ alert('מלאו שם, טלפון, עיר ורחוב'); return null; }
   const lines=ids.map(id=>{ const p=find(id); return `• ${p.name} × ${cart[id]} (${p.deal})`; });
-  return ['הזמנה — חי פארק מזון וציוד לבעלי חיים','',`שם: ${name}`,`טלפון: ${phone}`,`עיר: ${city}`,`רחוב: ${street}`,floor?`קומה: ${floor}`:null,notes?`הערות: ${notes}`:null,'','מוצרים:',...lines,'','תשלום אחרי אישור מלאי.'].filter(v=>v!==null).join('\n');
+  return ['הזמנה — חי פארק מזון וציוד לבעלי חיים','',`שם: ${name}`,`טלפון: ${phone}`,`עיר: ${city}`,`רחוב: ${street}`,entrance?`כניסה: ${entrance}`:null,floor?`קומה: ${floor}`:null,notes?`הערות: ${notes}`:null,'','מוצרים:',...lines,'','תשלום אחרי אישור מלאי.'].filter(v=>v!==null).join('\n');
 }
 let pendingMsg='';
 document.getElementById('btn-send').onclick=()=>{
