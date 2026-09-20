@@ -74,6 +74,8 @@ button,input,select,textarea{font:inherit;color:inherit}
 .primary{background:var(--orange);color:#fff;margin-top:4px}
 .ghost{background:transparent;border:1px solid var(--line2);margin-top:8px}
 .empty{color:var(--muted);font-size:13px;padding:12px 14px;text-align:center}
+.cart-total{margin:10px 14px 0;padding:12px;border-radius:14px;background:rgba(248,184,96,.1);border:1px solid rgba(248,184,96,.35);font-size:14px;line-height:1.45}
+.cart-total strong{color:var(--gold);font-size:16px}
 .dock{position:fixed;bottom:0;left:0;right:0;z-index:40;max-width:430px;margin:0 auto;padding:10px 12px calc(10px + var(--safe-b));background:rgba(13,17,20,.96);backdrop-filter:blur(14px);border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1.35fr;gap:8px}
 .dock button{appearance:none;border:0;border-radius:14px;padding:14px 10px;font-weight:800;font-size:14px;cursor:pointer}
 .dock .wa{background:transparent;color:var(--muted);border:1px solid var(--line2)}
@@ -91,7 +93,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 <body>
 <div class="app">
   <header class="topbar">
-    <div class="logo-shell"><img src="logo-canonical-web.png?v=21" alt="לוגו חי פארק מזון וציוד לבעלי חיים" width="48" height="48"/></div>
+    <div class="logo-shell"><img src="logo-canonical-web.png?v=22" alt="לוגו חי פארק מזון וציוד לבעלי חיים" width="48" height="48"/></div>
     <div class="titles">
       <h1><span style="color:var(--orange)">חי פארק</span> <span style="color:var(--muted);font-weight:600">מזון וציוד לבעלי חיים</span> <span style="color:var(--orange)">קריית חיים</span></h1>
       <p>קריית חיים · קריית ים · קריית מוצקין · קריית ביאליק</p>
@@ -183,39 +185,39 @@ button,input,select,textarea{font:inherit;color:inherit}
 const WA='972532569989';
 const PRODUCTS={
   cats:[
-    {id:'p01',name:'מיאו מיקס קיטן 6.44 ק״ג',meta:'מזון יבש · חתולים',deal:'₪140',img:'img/p01.jpg?v=21',mark:'MM'},
-    {id:'p02',name:'מיאו מיקס Tender Centers',meta:'~1.4 ק״ג · חתולים',deal:'₪40 · 2 ב־₪70 · 3 ב־₪100',img:'img/p02.jpg?v=21',mark:'MM'},
-    {id:'p03b',name:'ג׳וזי קאט בקר 18 ק״ג',meta:'Josera · חתול בוגר',deal:'₪190',img:'img/p03beef.jpg?v=21',mark:'JC'},
-    {id:'p03d',name:'ג׳וזי קאט עוף 18 ק״ג',meta:'Josera · חתול בוגר · עוף · שק ירוק',deal:'₪190',img:'img/p03chicken.jpg?v=21',mark:'JC'},
-    {id:'p06a',name:'גוסבי עוף־הודו 6 ק״ג',meta:'Exclusive · חתול בוגר',deal:'₪250',img:'img/p06a.jpg?v=21',mark:'GO'},
-    {id:'p06b',name:'גוסבי מסורס 6 ק״ג',meta:'Exclusive · עוף וסלמון',deal:'₪250',img:'img/p06b.jpg?v=21',mark:'GO'},
-    {id:'p07',name:'אמברוסיה חתולים 5 ק״ג',meta:'סלמון ועוף · הוליסטי · היפואלרגני',deal:'₪250',img:'img/p07.jpg?v=21',mark:'AM'},
-    {id:'p08k',name:'פרופלאן קיטן 3 ק״ג',meta:'Kitten',deal:'₪139',img:'img/p08k.jpg?v=21',mark:'PP'},
-    {id:'p08d',name:'פרופלאן Delicate 3 ק״ג',meta:'עיכול עדין',deal:'₪139',img:'img/p08d.jpg?v=21',mark:'PP'},
-    {id:'p08r',name:'פרופלאן Renal Plus 3 ק״ג',meta:'כליות',deal:'₪139',img:'img/p08r.jpg?v=21',mark:'PP'},
-    {id:'p09',name:'פריסקיז פארטי',meta:'חטיף חתול 60 ג׳',deal:'₪15 · 4 ב־₪50',img:'img/p09.jpg?v=21',mark:'FR'},
-    {id:'p10',name:'חול אברקלין 10 ל׳',meta:'Ever Clean · מתגבש',deal:'₪100',img:'img/p10.jpg?v=21',mark:'EC'},
-    {id:'p12',name:'חול קריסטל Gatoline',meta:'קריסטל לחתול',deal:'₪30 · 5 ב־₪100',img:'img/p12.jpg?v=21',mark:'CR'},
-    {id:'p13',name:'Fancy Feast לחתול',meta:'מגוון טעמים · פחית',deal:'₪6 ליחידה',img:'img/p13.jpg?v=21',mark:'FF'}
+    {id:'p01',name:'מיאו מיקס קיטן 6.44 ק״ג',meta:'מזון יבש · חתולים',deal:'₪140',img:'img/p01.jpg?v=22',mark:'MM',unit:140},
+    {id:'p02',name:'מיאו מיקס Tender Centers',meta:'~1.4 ק״ג · חתולים',deal:'₪40 · 2 ב־₪70 · 3 ב־₪100',img:'img/p02.jpg?v=22',mark:'MM',unit:40},
+    {id:'p03b',name:'ג׳וזי קאט בקר 18 ק״ג',meta:'Josera · חתול בוגר',deal:'₪190',img:'img/p03beef.jpg?v=22',mark:'JC',unit:190},
+    {id:'p03d',name:'ג׳וזי קאט עוף 18 ק״ג',meta:'Josera · חתול בוגר · עוף · שק ירוק',deal:'₪190',img:'img/p03chicken.jpg?v=22',mark:'JC',unit:190},
+    {id:'p06a',name:'גוסבי עוף־הודו 6 ק״ג',meta:'Exclusive · חתול בוגר',deal:'₪250',img:'img/p06a.jpg?v=22',mark:'GO',unit:250},
+    {id:'p06b',name:'גוסבי מסורס 6 ק״ג',meta:'Exclusive · עוף וסלמון',deal:'₪250',img:'img/p06b.jpg?v=22',mark:'GO',unit:250},
+    {id:'p07',name:'אמברוסיה חתולים 5 ק״ג',meta:'סלמון ועוף · הוליסטי · היפואלרגני',deal:'₪250',img:'img/p07.jpg?v=22',mark:'AM',unit:250},
+    {id:'p08k',name:'פרופלאן קיטן 3 ק״ג',meta:'Kitten',deal:'₪139',img:'img/p08k.jpg?v=22',mark:'PP',unit:139},
+    {id:'p08d',name:'פרופלאן Delicate 3 ק״ג',meta:'עיכול עדין',deal:'₪139',img:'img/p08d.jpg?v=22',mark:'PP',unit:139},
+    {id:'p08r',name:'פרופלאן Renal Plus 3 ק״ג',meta:'כליות',deal:'₪139',img:'img/p08r.jpg?v=22',mark:'PP',unit:139},
+    {id:'p09',name:'פריסקיז פארטי',meta:'חטיף חתול 60 ג׳',deal:'₪15 · 4 ב־₪50',img:'img/p09.jpg?v=22',mark:'FR',unit:15},
+    {id:'p10',name:'חול אברקלין 10 ל׳',meta:'Ever Clean · מתגבש',deal:'₪100',img:'img/p10.jpg?v=22',mark:'EC',unit:100},
+    {id:'p12',name:'חול קריסטל Gatoline',meta:'קריסטל לחתול',deal:'₪30 · 5 ב־₪100',img:'img/p12.jpg?v=22',mark:'CR',unit:30},
+    {id:'p13',name:'Fancy Feast לחתול',meta:'מגוון טעמים · פחית',deal:'₪6 ליחידה',img:'img/p13.jpg?v=22',mark:'FF',unit:6}
   ],
   rodents:[],
   dogs:[
-    {id:'p05as',name:'מונג׳ לכלב בוגר · סלמון',meta:'12 ק״ג · Adult',deal:'₪270',img:'img/p05as12.jpg?v=21',mark:'MO'},
-    {id:'p05ps',name:'מונג׳ לכלב גור · סלמון',meta:'12 ק״ג · Puppy & Junior',deal:'₪270',img:'img/p05ps12.jpg?v=21',mark:'MO'},
-    {id:'p05al',name:'מונג׳ לכלב בוגר · כבש',meta:'12 ק״ג · Adult',deal:'₪270',img:'img/p05al12.jpg?v=21',mark:'MO'},
-    {id:'p05pl',name:'מונג׳ לכלב גור · כבש',meta:'12 ק״ג · Puppy & Junior',deal:'₪270',img:'img/p05pl12.jpg?v=21',mark:'MO'},
-    {id:'p05h',name:'מונג׳ היפואלרגני · סלמון־טונה',meta:'12 ק״ג · Adult',deal:'₪270',img:'img/p05h12.jpg?v=21',mark:'MO'},
-    {id:'p04s12',name:'בלאק אולימפוס לכלב · סלמון',meta:'12 ק״ג · Adult · הוליסטי · היפואלרגני',deal:'₪289',img:'img/p04s12.jpg?v=21',mark:'BO'},
-    {id:'p04l12',name:'בלאק אולימפוס לכלב · כבש',meta:'12 ק״ג · Adult · שק ירוק · הוליסטי · היפואלרגני',deal:'₪289',img:'img/p04l12.jpg?v=21',mark:'BO'},
-    {id:'p04s2',name:'בלאק אולימפוס 2 ק״ג · סלמון',meta:'Adult',deal:'₪100',img:'img/p04s2.jpg?v=21',mark:'BO'},
-    {id:'p04l2',name:'בלאק אולימפוס 2 ק״ג · כבש',meta:'Adult',deal:'₪100',img:'img/p04l2.jpg?v=21',mark:'BO'},
-    {id:'p04m2',name:'בלאק אולימפוס מיני · עוף והודו',meta:'2 ק״ג · Adult Mini · גזע קטן',deal:'₪100',img:'img/p04m2.jpg?v=21',mark:'BO'},
-    {id:'p14',name:'חטיף לכלב',meta:'מבחר דליסנק / דוג׳יז / אולטרהפט',deal:'₪13.9 · 5 ב־₪50 · 12 ב־₪100',img:'img/p14.jpg?v=21',mark:'TR'}
+    {id:'p05as',name:'מונג׳ לכלב בוגר · סלמון',meta:'12 ק״ג · Adult',deal:'₪270',img:'img/p05as12.jpg?v=22',mark:'MO',unit:270},
+    {id:'p05ps',name:'מונג׳ לכלב גור · סלמון',meta:'12 ק״ג · Puppy & Junior',deal:'₪270',img:'img/p05ps12.jpg?v=22',mark:'MO',unit:270},
+    {id:'p05al',name:'מונג׳ לכלב בוגר · כבש',meta:'12 ק״ג · Adult',deal:'₪270',img:'img/p05al12.jpg?v=22',mark:'MO',unit:270},
+    {id:'p05pl',name:'מונג׳ לכלב גור · כבש',meta:'12 ק״ג · Puppy & Junior',deal:'₪270',img:'img/p05pl12.jpg?v=22',mark:'MO',unit:270},
+    {id:'p05h',name:'מונג׳ היפואלרגני · סלמון־טונה',meta:'12 ק״ג · Adult',deal:'₪270',img:'img/p05h12.jpg?v=22',mark:'MO',unit:270},
+    {id:'p04s12',name:'בלאק אולימפוס לכלב · סלמון',meta:'12 ק״ג · Adult · הוליסטי · היפואלרגני',deal:'₪289',img:'img/p04s12.jpg?v=22',mark:'BO',unit:289},
+    {id:'p04l12',name:'בלאק אולימפוס לכלב · כבש',meta:'12 ק״ג · Adult · שק ירוק · הוליסטי · היפואלרגני',deal:'₪289',img:'img/p04l12.jpg?v=22',mark:'BO',unit:289},
+    {id:'p04s2',name:'בלאק אולימפוס 2 ק״ג · סלמון',meta:'Adult',deal:'₪100',img:'img/p04s2.jpg?v=22',mark:'BO',unit:100},
+    {id:'p04l2',name:'בלאק אולימפוס 2 ק״ג · כבש',meta:'Adult',deal:'₪100',img:'img/p04l2.jpg?v=22',mark:'BO',unit:100},
+    {id:'p04m2',name:'בלאק אולימפוס מיני · עוף והודו',meta:'2 ק״ג · Adult Mini · גזע קטן',deal:'₪100',img:'img/p04m2.jpg?v=22',mark:'BO',unit:100},
+    {id:'p14',name:'חטיף לכלב',meta:'מבחר דליסנק / דוג׳יז / אולטרהפט',deal:'₪13.9 · 5 ב־₪50 · 12 ב־₪100',img:'img/p14.jpg?v=22',mark:'TR',unit:13.9}
   ],
   birds:[],
   gear:[
-    {id:'p11',name:'תרסיס פרוטקטור 250 מ״ל',meta:'פרעושים וקרציות · כלב וחתול',deal:'₪120',img:'img/p11.jpg?v=21',mark:'PR'},
-    {id:'p15',name:'משטח גירוד לחתול',meta:'קרטון ~47×23 ס״מ',deal:'₪40 · 2 ב־₪70 · 3 ב־₪99',img:'img/p15.jpg?v=21',mark:'SC'}
+    {id:'p11',name:'תרסיס פרוטקטור 250 מ״ל',meta:'פרעושים וקרציות · כלב וחתול',deal:'₪120',img:'img/p11.jpg?v=22',mark:'PR',unit:120},
+    {id:'p15',name:'משטח גירוד לחתול',meta:'קרטון ~47×23 ס״מ',deal:'₪40 · 2 ב־₪70 · 3 ב־₪99',img:'img/p15.jpg?v=22',mark:'SC',unit:40}
   ]
 };
 const TITLES={cats:'חתולים',rodents:'מכרסמים',dogs:'כלבים',birds:'ציפורים',gear:'ציוד והדברה'};
@@ -260,10 +262,15 @@ function renderCart(){
   document.getElementById('btn-cart').classList.toggle('has',n>0);
   const ids=Object.keys(cart);
   if(!ids.length){ el.innerHTML='<div class="empty">הסל ריק — הוסיפו משהו 🐾</div>'; return; }
-  el.innerHTML=ids.map(id=>{
+  const lines=ids.map(id=>{
     const p=find(id);
     return `<div class="cart-line"><span>${p.name} × ${cart[id]}<br/><small style="color:var(--muted)">${p.deal}</small></span><button type="button" data-minus="${id}">הסרה</button></div>`;
   }).join('');
+  const total=ids.reduce((s,id)=>{ const p=find(id); const u=Number(p&&p.unit)||0; return s+u*cart[id]; },0);
+  const totalHtml=total>0
+    ? `<div class="cart-total">סה״כ משוער: <strong>₪${total % 1 ? total.toFixed(1) : total}</strong><br/><small>לפני אישור מלאי · מבצעים לפי כמות יחושבו בחנות</small></div>`
+    : `<div class="cart-total"><small>סה״כ יאושר בוואטסאפ / בחנות</small></div>`;
+  el.innerHTML=lines+totalHtml;
 }
 function render(){ renderGrid(); renderCart(); }
 document.querySelector('.cats').addEventListener('click',e=>{
@@ -297,7 +304,9 @@ function buildOrderMsg(){
   if(!ids.length){ alert('הסל ריק'); return null; }
   if(!name||!phone||!city||!street){ alert('מלאו שם, טלפון, עיר ורחוב'); return null; }
   const lines=ids.map(id=>{ const p=find(id); return `• ${p.name} × ${cart[id]} (${p.deal})`; });
-  return ['הזמנה — חי פארק מזון וציוד לבעלי חיים','',`שם: ${name}`,`טלפון: ${phone}`,`עיר: ${city}`,`רחוב: ${street}`,entrance?`כניסה: ${entrance}`:null,floor?`קומה: ${floor}`:null,notes?`הערות: ${notes}`:null,'','מוצרים:',...lines,'','תשלום אחרי אישור מלאי.'].filter(v=>v!==null).join('\n');
+  const est=ids.reduce((s,id)=>{ const p=find(id); const u=Number(p&&p.unit)||0; return s+u*cart[id]; },0);
+  const estLine=est>0?`סה״כ משוער: ₪${est % 1 ? est.toFixed(1) : est} (לפני אישור מלאי)`:null;
+  return ['הזמנה — חי פארק מזון וציוד לבעלי חיים','',`שם: ${name}`,`טלפון: ${phone}`,`עיר: ${city}`,`רחוב: ${street}`,entrance?`כניסה: ${entrance}`:null,floor?`קומה: ${floor}`:null,notes?`הערות: ${notes}`:null,'','מוצרים:',...lines,'',estLine,'','תשלום אחרי אישור מלאי.'].filter(v=>v!==null && v!==undefined && v!=='').join('\n');
 }
 let pendingMsg='';
 document.getElementById('btn-send').onclick=()=>{
