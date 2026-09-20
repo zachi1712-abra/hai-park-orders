@@ -1,1 +1,273 @@
-<!DOCTYPE html><html><body>deploying...</body></html>
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="theme-color" content="#0d1114"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>חי פארק מזון וציוד לבעלי חיים — הזמנה</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=Rubik:wght@700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{--orange:#C03800;--teal:#38E890;--gold:#F8B860;--bg:#25292d;--card:#0d1114;--panel:#11161a;--line:#383f45;--line2:#4b555d;--text:#fff;--muted:#b8c0c4;--soft:#e8eaec;--safe-b:env(safe-area-inset-bottom,0px);--radius:18px}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;font-family:Heebo,system-ui,sans-serif;background:var(--bg);color:var(--text)}
+body{padding-bottom:calc(92px + var(--safe-b))}
+button,input,select,textarea{font:inherit;color:inherit}
+.app{max-width:430px;margin:0 auto;min-height:100vh}
+.topbar{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:12px;padding:10px 14px;background:rgba(13,17,20,.92);backdrop-filter:blur(14px);border-bottom:1px solid #fff}
+.logo-shell{width:58px;height:58px;min-width:58px;padding:5px;border-radius:50%;background:#050505;display:grid;place-items:center;box-shadow:0 0 0 2px rgba(56,232,144,.45)}
+.logo-shell img{width:100%;height:100%;object-fit:contain;border-radius:50%}
+.titles{flex:1;min-width:0}
+.titles h1{margin:0;font-family:Rubik,Heebo,sans-serif;font-size:14px;font-weight:800;line-height:1.25}
+.titles p{margin:3px 0 0;font-size:12px;color:var(--muted)}
+.hero{margin:12px 14px 8px;padding:14px;border-radius:var(--radius);background:linear-gradient(160deg,#0d1114,#13201a 70%,#1a1810);border:1px solid var(--line)}
+.badge{display:inline-flex;padding:5px 10px;border-radius:999px;background:rgba(56,232,144,.14);border:1px solid rgba(56,232,144,.4);color:var(--teal);font-size:12px;font-weight:700;margin-bottom:8px}
+.hero h2{margin:0 0 10px;font-family:Rubik,Heebo,sans-serif;font-size:20px;font-weight:800}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pill{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--line2);font-size:12px}
+.pill strong{color:var(--gold)}
+.soft-note{margin:10px 0 0;font-size:12px;color:var(--muted);line-height:1.4}
+.cats-wrap{position:sticky;top:69px;z-index:25;background:linear-gradient(#25292d 70%,rgba(37,41,45,0))}
+.cats{display:flex;gap:8px;overflow-x:auto;padding:6px 14px 10px;scrollbar-width:none}
+.cats::-webkit-scrollbar{display:none}
+.cat{flex:0 0 auto;appearance:none;border:1px solid var(--line2);background:var(--panel);border-radius:999px;padding:10px 14px;font-weight:700;font-size:13px;cursor:pointer;white-space:nowrap}
+.cat.active{background:rgba(56,232,144,.16);border-color:var(--teal)}
+.section{padding:0 14px 8px}
+.section-head{display:flex;justify-content:space-between;align-items:baseline;margin:4px 0 10px}
+.section-head h3{margin:0;font-size:15px}
+.section-head span{font-size:12px;color:var(--muted)}
+.grid{display:flex;flex-direction:column;gap:10px}
+.card{display:grid;grid-template-columns:72px 1fr auto;gap:10px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px}
+.card img{width:72px;height:72px;object-fit:cover;border-radius:12px;background:#000}
+.card .name{font-weight:700;font-size:13.5px;line-height:1.3}
+.card .meta{font-size:11.5px;color:var(--muted);margin-top:2px}
+.card .deal{font-size:12px;color:var(--gold);font-weight:700;margin-top:4px}
+.qty{display:flex;align-items:center;gap:6px}
+.qty button{width:36px;height:36px;border-radius:12px;border:1px solid var(--line2);background:var(--panel);font-size:18px;font-weight:700;cursor:pointer}
+.qty button.plus{background:var(--orange);border-color:transparent}
+.qty span{min-width:16px;text-align:center;font-weight:700;font-size:13px}
+.missing{padding:6px 14px 16px}
+.missing button{width:100%;appearance:none;border:1.5px dashed rgba(248,184,96,.55);background:rgba(248,184,96,.06);color:var(--gold);border-radius:14px;padding:13px;font-weight:700;cursor:pointer}
+.footer{padding:4px 16px 20px;font-size:11px;color:var(--muted);text-align:center;line-height:1.55}
+.panel{display:none}.panel.on{display:block}
+.cart-top{padding:14px 14px 0}
+.steps{display:flex;gap:8px;margin-bottom:12px}
+.step{flex:1;text-align:center;padding:8px;border-radius:12px;background:var(--panel);border:1px solid var(--line);font-size:12px;color:var(--muted);font-weight:600}
+.step.on{border-color:var(--teal);color:var(--teal);background:rgba(56,232,144,.08)}
+.form{padding:0 14px 8px}
+.form label{display:block;font-size:12px;font-weight:600;margin:12px 0 6px;color:var(--muted)}
+.form input,.form select,.form textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:13px 14px;background:var(--card)}
+.form textarea{min-height:72px;resize:vertical}
+.cart-lines{display:flex;flex-direction:column;gap:8px;padding:0 14px}
+.cart-line{display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 12px;font-size:13px}
+.cart-line button{appearance:none;border:0;background:transparent;color:var(--orange);font-weight:700;cursor:pointer;font-size:12px}
+.pay-note{margin:12px 14px;padding:12px;border-radius:14px;background:rgba(56,232,144,.08);border:1px solid rgba(56,232,144,.3);font-size:12.5px;line-height:1.45}
+.actions{padding:0 14px 20px}
+.primary,.ghost{width:100%;border-radius:14px;padding:14px;font-weight:800;cursor:pointer;border:0}
+.primary{background:var(--orange);color:#fff;margin-top:4px}
+.ghost{background:transparent;border:1px solid var(--line2);margin-top:8px}
+.empty{color:var(--muted);font-size:13px;padding:12px 14px;text-align:center}
+.dock{position:fixed;bottom:0;left:0;right:0;z-index:40;max-width:430px;margin:0 auto;padding:10px 12px calc(10px + var(--safe-b));background:rgba(13,17,20,.96);backdrop-filter:blur(14px);border-top:1px solid #fff;display:grid;grid-template-columns:1fr 1.35fr;gap:8px}
+.dock button{appearance:none;border:0;border-radius:14px;padding:14px 10px;font-weight:800;font-size:14px;cursor:pointer}
+.dock .wa{background:rgba(56,232,144,.18);color:var(--teal);border:1px solid rgba(56,232,144,.4)}
+.dock .cartbtn{background:var(--orange);color:#fff}
+.dock .cartbtn.has{box-shadow:0 6px 20px rgba(192,56,0,.35)}
+.dock .count{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 5px;margin-inline-start:6px;border-radius:999px;background:#fff;color:var(--orange);font-size:11px;font-weight:800}
+.modal-bg{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.62);display:none;align-items:flex-end;justify-content:center;padding:12px;padding-bottom:calc(12px + var(--safe-b))}
+.modal-bg.on{display:flex}
+.modal{width:100%;max-width:430px;max-height:78vh;overflow:auto;background:var(--card);border:1px solid var(--line);border-radius:20px 20px 16px 16px;padding:16px 14px 14px}
+.modal h3{margin:0 0 8px;font-size:16px;font-family:Rubik,Heebo,sans-serif}
+.modal .sum{font-size:13px;line-height:1.55;white-space:pre-wrap;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;margin:10px 0 12px}
+.modal .row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="logo-shell"><img src="logo-canonical-web.png" alt="לוגו חי פארק מזון וציוד לבעלי חיים" width="48" height="48"/></div>
+    <div class="titles">
+      <h1>חי פארק מזון וציוד לבעלי חיים</h1>
+      <p>קריית חיים · הזמנה מהירה</p>
+    </div>
+  </header>
+  <section id="view-home" class="panel on">
+    <div class="hero">
+      <div class="badge">● משלוח היום בקריות</div>
+      <h2>בוחרים. שולחים. בילי מטפל.</h2>
+      <div class="pills">
+        <span class="pill">עד <strong>19:00</strong></span>
+        <span class="pill">חינם מעל <strong>150 ₪</strong></span>
+        <span class="pill">כולל <strong>קומה</strong></span>
+      </div>
+      <p class="soft-note">לא גן החיות במוצקין · מחירים מהחנות · תשלום אחרי אישור מלאי · בלי אשראי בדף</p>
+    </div>
+    <div class="cats-wrap"><div class="cats" role="tablist">
+      <button class="cat active" data-cat="cats" type="button">🐈 חתולים</button>
+      <button class="cat" data-cat="dogs" type="button">🐕 כלבים</button>
+      <button class="cat" data-cat="gear" type="button">🧴 ציוד והדברה</button>
+    </div></div>
+    <div class="section">
+      <div class="section-head"><h3 id="cat-title">חתולים</h3><span>לחצו + להוספה</span></div>
+      <div class="grid" id="product-grid"></div>
+    </div>
+    <div class="missing"><button type="button" id="btn-missing">לא מצאת? כתבו לנו בוואטסאפ 💬</button></div>
+    <p class="footer">שדרות דגניה 30 פינת זלמן ארן 1, קריית חיים · 053-256-99-89<br/>מלאי משתנה · המחיר הסופי באישור החנות</p>
+  </section>
+  <section id="view-cart" class="panel">
+    <div class="cart-top">
+      <div class="steps"><div class="step">1 · מוצרים</div><div class="step on">2 · פרטים ושליחה</div></div>
+      <h3 style="margin:0 0 10px;font-size:16px">הסל שלכם</h3>
+    </div>
+    <div id="cart-lines" class="cart-lines"></div>
+    <div class="form">
+      <label for="name">שם</label><input id="name" autocomplete="name" required placeholder="איך לקרוא לכם"/>
+      <label for="phone">טלפון</label><input id="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="05X-XXX-XXXX"/>
+      <label for="city">עיר</label>
+      <select id="city" required>
+        <option value="">בחרו קריה</option>
+        <option>קריית חיים</option><option>קריית ים</option><option>קריית מוצקין</option><option>קריית ביאליק</option>
+      </select>
+      <label for="street">רחוב ומספר</label><input id="street" autocomplete="street-address" required placeholder="למשל דגניה 30"/>
+      <label for="floor">קומה (רשות)</label><input id="floor" placeholder="3 / קרקע"/>
+      <label for="notes">הערות / טעם מועדף (רשות)</label><textarea id="notes" placeholder="טעם, קוד בניין, שעה…"></textarea>
+    </div>
+    <div class="pay-note">שולחים בוואטסאפ — מאשרים מלאי ומחיר סופי. <strong>בלי תשלום בדף.</strong></div>
+    <div class="actions">
+      <button class="primary" type="button" id="btn-send">שליחה בוואטסאפ ✓</button>
+      <button class="ghost" type="button" id="btn-back">חזרה למוצרים</button>
+    </div>
+  </section>
+  <div class="modal-bg" id="confirm-modal" role="dialog" aria-modal="true">
+    <div class="modal">
+      <h3>מוכנים לשלוח?</h3>
+      <p style="margin:0;font-size:12px;color:var(--muted)">נפתח וואטסאפ עם ההזמנה. בלי תשלום כאן.</p>
+      <div class="sum" id="confirm-sum"></div>
+      <div class="row">
+        <button class="ghost" type="button" id="btn-confirm-cancel" style="margin:0">תיקון</button>
+        <button class="primary" type="button" id="btn-confirm-ok" style="margin:0">וואטסאפ ✓</button>
+      </div>
+    </div>
+  </div>
+  <div class="dock">
+    <button class="wa" type="button" id="btn-wa-fab">וואטסאפ</button>
+    <button class="cartbtn" type="button" id="btn-cart">הסל <span class="count" id="cart-count">0</span></button>
+  </div>
+</div>
+<script>
+const WA='972532569989';
+const PRODUCTS={
+  cats:[
+{id:'p01',name:'מיאו מיקס קיטן 6.44 ק״ג',meta:'מזון יבש · חתולים',deal:'₪140',img:'img/p01.jpg',mark:'MM'},
+    {id:'p02',name:'מיאו מיקס Tender Centers',meta:'~1.4 ק״ג · חתולים',deal:'₪40 · 2 ב־₪70 · 3 ב־₪100',img:'img/p02.jpg',mark:'MM'},
+    {id:'p03',name:'ג׳וזי קאט בקר 18 ק״ג',meta:'Josera · חתול בוגר',deal:'₪190',img:'img/p03.jpg',mark:'JC'},
+    {id:'p06',name:'גוסבי לחתול 6 ק״ג',meta:'Exclusive · עוף־הודו / מסורס',deal:'₪250',img:'img/p06.jpg',mark:'GO'},
+    {id:'p07',name:'אמברוסיה חתולים 5 ק״ג',meta:'סלמון ועוף · הוליסטי',deal:'₪250',img:'img/p07.jpg',mark:'AM'},
+    {id:'p08',name:'פרופלאן חתול 3 ק״ג',meta:'קיטן · delicate · renal · sterilised',deal:'₪139',img:'img/p08.jpg',mark:'PP'},
+    {id:'p09',name:'פריסקיז פארטי',meta:'חטיף חתול 60 ג׳',deal:'₪15 · 4 ב־₪50',img:'img/p09.jpg',mark:'FR'},
+    {id:'p10',name:'חול אברקלין 10 ל׳',meta:'Ever Clean · מתגבש',deal:'₪100',img:'img/p10.jpg',mark:'EC'},
+    {id:'p12',name:'חול קריסטל Gatoline',meta:'קריסטל לחתול',deal:'₪30 · 5 ב־₪100',img:'img/p12.jpg',mark:'CR'},
+    {id:'p13',name:'Fancy Feast לחתול',meta:'מגוון טעמים · פחית',deal:'₪6 ליחידה',img:'img/p13.jpg',mark:'FF'}
+  ],
+  dogs:[
+{id:'p04',name:'בלאק אולימפוס לכלב',meta:'12 ק״ג / 2 ק״ג · כבש · סלמון · מיני',deal:'לפי גודל · שאל בוואטסאפ',img:'img/p04.jpg',mark:'BO'},
+    {id:'p05',name:'מונג׳ לכלב',meta:'12 ק״ג ₪270 · 2.5 ק״ג ₪100',deal:'סלמון · כבש · היפו סלמון־טונה',img:'img/p05.jpg',mark:'MO'},
+    {id:'p14',name:'חטיף לכלב',meta:'מבחר דליסנק / דוג׳יז / אולטרהפט',deal:'₪13.9 · 5 ב־₪50 · 12 ב־₪100',img:'img/p14.jpg',mark:'TR'}
+  ],
+  gear:[
+{id:'p11',name:'תרסיס פרוטקטור 250 מ״ל',meta:'פרעושים וקרציות · כלב וחתול',deal:'₪120',img:'img/p11.jpg',mark:'PR'},
+    {id:'p15',name:'משטח גירוד לחתול',meta:'קרטון ~47×23 ס״מ',deal:'₪40 · 2 ב־₪70 · 3 ב־₪99',img:'img/p15.jpg',mark:'SC'}
+  ]
+};
+const TITLES={cats:'חתולים',dogs:'כלבים',gear:'ציוד והדברה'};
+const cart={}; let cat='cats';
+const qty=id=>cart[id]||0;
+const all=()=>Object.values(PRODUCTS).flat();
+const find=id=>all().find(p=>p.id===id);
+const count=()=>Object.values(cart).reduce((a,b)=>a+b,0);
+function setQty(id,n){ if(n<=0) delete cart[id]; else cart[id]=n; render(); }
+function openWA(text){ window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(text),'_blank'); }
+function show(v){
+  document.getElementById('view-home').classList.toggle('on',v==='home');
+  document.getElementById('view-cart').classList.toggle('on',v==='cart');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function renderGrid(){
+  document.getElementById('cat-title').textContent=TITLES[cat];
+  document.getElementById('product-grid').innerHTML=PRODUCTS[cat].map(p=>`
+    <article class="card">
+      <img src="${p.img}" alt="${p.name}" loading="lazy" width="72" height="72"/>
+      <div>
+        <div class="name">${p.name}</div>
+        <div class="meta">${p.meta}</div>
+        <div class="deal">${p.deal}</div>
+      </div>
+      <div class="qty">
+        <button type="button" data-minus="${p.id}">−</button>
+        <span>${qty(p.id)}</span>
+        <button class="plus" type="button" data-plus="${p.id}">+</button>
+      </div>
+    </article>`).join('');
+}
+function renderCart(){
+  const el=document.getElementById('cart-lines');
+  const n=count();
+  document.getElementById('cart-count').textContent=n;
+  document.getElementById('btn-cart').classList.toggle('has',n>0);
+  const ids=Object.keys(cart);
+  if(!ids.length){ el.innerHTML='<div class="empty">הסל ריק — הוסיפו משהו 🐾</div>'; return; }
+  el.innerHTML=ids.map(id=>{
+    const p=find(id);
+    return `<div class="cart-line"><span>${p.name} × ${cart[id]}<br/><small style="color:var(--muted)">${p.deal}</small></span><button type="button" data-minus="${id}">הסרה</button></div>`;
+  }).join('');
+}
+function render(){ renderGrid(); renderCart(); }
+document.querySelector('.cats').addEventListener('click',e=>{
+  const b=e.target.closest('.cat'); if(!b) return;
+  document.querySelectorAll('.cat').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active'); cat=b.dataset.cat; renderGrid();
+});
+document.getElementById('product-grid').addEventListener('click',e=>{
+  const plus=e.target.closest('[data-plus]');
+  const minus=e.target.closest('[data-minus]');
+  if(plus) setQty(plus.dataset.plus, qty(plus.dataset.plus)+1);
+  if(minus) setQty(minus.dataset.minus, qty(minus.dataset.minus)-1);
+});
+document.getElementById('cart-lines').addEventListener('click',e=>{
+  const minus=e.target.closest('[data-minus]');
+  if(minus) setQty(minus.dataset.minus,0);
+});
+document.getElementById('btn-cart').onclick=()=>show('cart');
+document.getElementById('btn-back').onclick=()=>show('home');
+document.getElementById('btn-wa-fab').onclick=()=>openWA('שלום מחי פארק מזון וציוד לבעלי חיים 👋\nאשמח לעזרה בהזמנה.');
+document.getElementById('btn-missing').onclick=()=>openWA('שלום מחי פארק מזון וציוד לבעלי חיים 👋\nלא מצאתי מוצר בדף. אשלח פירוט / תמונה:');
+function buildOrderMsg(){
+  const name=document.getElementById('name').value.trim();
+  const phone=document.getElementById('phone').value.trim();
+  const city=document.getElementById('city').value;
+  const street=document.getElementById('street').value.trim();
+  const floor=document.getElementById('floor').value.trim();
+  const notes=document.getElementById('notes').value.trim();
+  const ids=Object.keys(cart);
+  if(!ids.length){ alert('הסל ריק'); return null; }
+  if(!name||!phone||!city||!street){ alert('מלאו שם, טלפון, עיר ורחוב'); return null; }
+  const lines=ids.map(id=>{ const p=find(id); return `• ${p.name} × ${cart[id]} (${p.deal})`; });
+  return ['הזמנה — חי פארק מזון וציוד לבעלי חיים','',`שם: ${name}`,`טלפון: ${phone}`,`עיר: ${city}`,`רחוב: ${street}`,floor?`קומה: ${floor}`:null,notes?`הערות: ${notes}`:null,'','מוצרים:',...lines,'','תשלום אחרי אישור מלאי.'].filter(v=>v!==null).join('\n');
+}
+let pendingMsg='';
+document.getElementById('btn-send').onclick=()=>{
+  const msg=buildOrderMsg(); if(!msg) return;
+  pendingMsg=msg;
+  document.getElementById('confirm-sum').textContent=msg;
+  document.getElementById('confirm-modal').classList.add('on');
+};
+document.getElementById('btn-confirm-cancel').onclick=()=>document.getElementById('confirm-modal').classList.remove('on');
+document.getElementById('btn-confirm-ok').onclick=()=>{
+  document.getElementById('confirm-modal').classList.remove('on');
+  if(pendingMsg) openWA(pendingMsg);
+};
+render();
+</script>
+</body>
+</html>
