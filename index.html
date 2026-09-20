@@ -73,7 +73,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .empty{color:var(--muted);font-size:13px;padding:12px 14px;text-align:center}
 .dock{position:fixed;bottom:0;left:0;right:0;z-index:40;max-width:430px;margin:0 auto;padding:10px 12px calc(10px + var(--safe-b));background:rgba(13,17,20,.96);backdrop-filter:blur(14px);border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1.35fr;gap:8px}
 .dock button{appearance:none;border:0;border-radius:14px;padding:14px 10px;font-weight:800;font-size:14px;cursor:pointer}
-.dock .wa{background:rgba(56,232,144,.18);color:var(--teal);border:1px solid rgba(56,232,144,.4)}
+.dock .wa{background:transparent;color:var(--muted);border:1px solid var(--line2)}
 .dock .cartbtn{background:var(--gold);color:#1a1208}
 .dock .cartbtn.has{box-shadow:0 6px 20px rgba(248,184,96,.35)}
 .dock .count{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 5px;margin-inline-start:6px;border-radius:999px;background:#1a1208;color:var(--gold);font-size:11px;font-weight:800}
@@ -88,7 +88,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 <body>
 <div class="app">
   <header class="topbar">
-    <div class="logo-shell"><img src="logo-canonical-web.png?v=14" alt="לוגו חי פארק מזון וציוד לבעלי חיים" width="48" height="48"/></div>
+    <div class="logo-shell"><img src="logo-canonical-web.png?v=15" alt="לוגו חי פארק מזון וציוד לבעלי חיים" width="48" height="48"/></div>
     <div class="titles">
       <h1><span style="color:var(--orange)">חי פארק</span> <span style="color:var(--muted);font-weight:600">מזון וציוד לבעלי חיים · קריית חיים</span></h1>
       <p>קריית חיים · קריית ים · קריית מוצקין · קריית ביאליק</p>
@@ -179,36 +179,36 @@ button,input,select,textarea{font:inherit;color:inherit}
 const WA='972532569989';
 const PRODUCTS={
   cats:[
-    {id:'p01',name:'מיאו מיקס קיטן 6.44 ק״ג',meta:'מזון יבש · חתולים',deal:'₪140',img:'img/p01.jpg?v=14',mark:'MM'},
-    {id:'p02',name:'מיאו מיקס Tender Centers',meta:'~1.4 ק״ג · חתולים',deal:'₪40 · 2 ב־₪70 · 3 ב־₪100',img:'img/p02.jpg?v=14',mark:'MM'},
-    {id:'p03b',name:'ג׳וזי קאט בקר 18 ק״ג',meta:'Josera · חתול בוגר',deal:'₪190',img:'img/p03beef.jpg?v=14',mark:'JC'},
-    {id:'p03d',name:'ג׳וזי קאט עוף 18 ק״ג',meta:'Josera · חתול בוגר · עוף · שק ירוק',deal:'₪190',img:'img/p03chicken.jpg?v=14',mark:'JC'},
-    {id:'p06',name:'גוסבי לחתול 6 ק״ג',meta:'Exclusive · עוף־הודו / מסורס',deal:'₪250',img:'img/p06.jpg?v=14',mark:'GO'},
-    {id:'p07',name:'אמברוסיה חתולים 5 ק״ג',meta:'סלמון ועוף · הוליסטי · היפואלרגני',deal:'₪250',img:'img/p07.jpg?v=14',mark:'AM'},
-    {id:'p08',name:'פרופלאן חתול 3 ק״ג',meta:'קיטן · delicate · renal · sterilised',deal:'₪139',img:'img/p08.jpg?v=14',mark:'PP'},
-    {id:'p09',name:'פריסקיז פארטי',meta:'חטיף חתול 60 ג׳',deal:'₪15 · 4 ב־₪50',img:'img/p09.jpg?v=14',mark:'FR'},
-    {id:'p10',name:'חול אברקלין 10 ל׳',meta:'Ever Clean · מתגבש',deal:'₪100',img:'img/p10.jpg?v=14',mark:'EC'},
-    {id:'p12',name:'חול קריסטל Gatoline',meta:'קריסטל לחתול',deal:'₪30 · 5 ב־₪100',img:'img/p12.jpg?v=14',mark:'CR'},
-    {id:'p13',name:'Fancy Feast לחתול',meta:'מגוון טעמים · פחית',deal:'₪6 ליחידה',img:'img/p13.jpg?v=14',mark:'FF'}
+    {id:'p01',name:'מיאו מיקס קיטן 6.44 ק״ג',meta:'מזון יבש · חתולים',deal:'₪140',img:'img/p01.jpg?v=15',mark:'MM'},
+    {id:'p02',name:'מיאו מיקס Tender Centers',meta:'~1.4 ק״ג · חתולים',deal:'₪40 · 2 ב־₪70 · 3 ב־₪100',img:'img/p02.jpg?v=15',mark:'MM'},
+    {id:'p03b',name:'ג׳וזי קאט בקר 18 ק״ג',meta:'Josera · חתול בוגר',deal:'₪190',img:'img/p03beef.jpg?v=15',mark:'JC'},
+    {id:'p03d',name:'ג׳וזי קאט עוף 18 ק״ג',meta:'Josera · חתול בוגר · עוף · שק ירוק',deal:'₪190',img:'img/p03chicken.jpg?v=15',mark:'JC'},
+    {id:'p06',name:'גוסבי לחתול 6 ק״ג',meta:'Exclusive · עוף־הודו / מסורס',deal:'₪250',img:'img/p06.jpg?v=15',mark:'GO'},
+    {id:'p07',name:'אמברוסיה חתולים 5 ק״ג',meta:'סלמון ועוף · הוליסטי · היפואלרגני',deal:'₪250',img:'img/p07.jpg?v=15',mark:'AM'},
+    {id:'p08',name:'פרופלאן חתול 3 ק״ג',meta:'קיטן · delicate · renal · sterilised',deal:'₪139',img:'img/p08.jpg?v=15',mark:'PP'},
+    {id:'p09',name:'פריסקיז פארטי',meta:'חטיף חתול 60 ג׳',deal:'₪15 · 4 ב־₪50',img:'img/p09.jpg?v=15',mark:'FR'},
+    {id:'p10',name:'חול אברקלין 10 ל׳',meta:'Ever Clean · מתגבש',deal:'₪100',img:'img/p10.jpg?v=15',mark:'EC'},
+    {id:'p12',name:'חול קריסטל Gatoline',meta:'קריסטל לחתול',deal:'₪30 · 5 ב־₪100',img:'img/p12.jpg?v=15',mark:'CR'},
+    {id:'p13',name:'Fancy Feast לחתול',meta:'מגוון טעמים · פחית',deal:'₪6 ליחידה',img:'img/p13.jpg?v=15',mark:'FF'}
   ],
   rodents:[],
   dogs:[
-    {id:'p05as',name:'מונג׳ לכלב בוגר · סלמון',meta:'12 ק״ג · Adult',deal:'₪270',img:'img/p05as12.jpg?v=14',mark:'MO'},
-    {id:'p05ps',name:'מונג׳ לכלב גור · סלמון',meta:'12 ק״ג · Puppy & Junior',deal:'₪270',img:'img/p05ps12.jpg?v=14',mark:'MO'},
-    {id:'p05al',name:'מונג׳ לכלב בוגר · כבש',meta:'12 ק״ג · Adult',deal:'₪270',img:'img/p05al12.jpg?v=14',mark:'MO'},
-    {id:'p05pl',name:'מונג׳ לכלב גור · כבש',meta:'12 ק״ג · Puppy & Junior',deal:'₪270',img:'img/p05pl12.jpg?v=14',mark:'MO'},
-    {id:'p05h',name:'מונג׳ היפואלרגני · סלמון־טונה',meta:'12 ק״ג · Adult',deal:'₪270',img:'img/p05h12.jpg?v=14',mark:'MO'},
-    {id:'p04s12',name:'בלאק אולימפוס לכלב · סלמון',meta:'12 ק״ג · Adult · הוליסטי · היפואלרגני',deal:'₪289',img:'img/p04s12.jpg?v=14',mark:'BO'},
-    {id:'p04l12',name:'בלאק אולימפוס לכלב · כבש',meta:'12 ק״ג · Adult · שק ירוק · הוליסטי · היפואלרגני',deal:'₪289',img:'img/p04l12.jpg?v=14',mark:'BO'},
-    {id:'p04s2',name:'בלאק אולימפוס 2 ק״ג · סלמון',meta:'Adult',deal:'₪100',img:'img/p04s2.jpg?v=14',mark:'BO'},
-    {id:'p04l2',name:'בלאק אולימפוס 2 ק״ג · כבש',meta:'Adult',deal:'₪100',img:'img/p04l2.jpg?v=14',mark:'BO'},
-    {id:'p04m2',name:'בלאק אולימפוס מיני · עוף והודו',meta:'2 ק״ג · Adult Mini · גזע קטן',deal:'₪100',img:'img/p04m2.jpg?v=14',mark:'BO'},
-    {id:'p14',name:'חטיף לכלב',meta:'מבחר דליסנק / דוג׳יז / אולטרהפט',deal:'₪13.9 · 5 ב־₪50 · 12 ב־₪100',img:'img/p14.jpg?v=14',mark:'TR'}
+    {id:'p05as',name:'מונג׳ לכלב בוגר · סלמון',meta:'12 ק״ג · Adult',deal:'₪270',img:'img/p05as12.jpg?v=15',mark:'MO'},
+    {id:'p05ps',name:'מונג׳ לכלב גור · סלמון',meta:'12 ק״ג · Puppy & Junior',deal:'₪270',img:'img/p05ps12.jpg?v=15',mark:'MO'},
+    {id:'p05al',name:'מונג׳ לכלב בוגר · כבש',meta:'12 ק״ג · Adult',deal:'₪270',img:'img/p05al12.jpg?v=15',mark:'MO'},
+    {id:'p05pl',name:'מונג׳ לכלב גור · כבש',meta:'12 ק״ג · Puppy & Junior',deal:'₪270',img:'img/p05pl12.jpg?v=15',mark:'MO'},
+    {id:'p05h',name:'מונג׳ היפואלרגני · סלמון־טונה',meta:'12 ק״ג · Adult',deal:'₪270',img:'img/p05h12.jpg?v=15',mark:'MO'},
+    {id:'p04s12',name:'בלאק אולימפוס לכלב · סלמון',meta:'12 ק״ג · Adult · הוליסטי · היפואלרגני',deal:'₪289',img:'img/p04s12.jpg?v=15',mark:'BO'},
+    {id:'p04l12',name:'בלאק אולימפוס לכלב · כבש',meta:'12 ק״ג · Adult · שק ירוק · הוליסטי · היפואלרגני',deal:'₪289',img:'img/p04l12.jpg?v=15',mark:'BO'},
+    {id:'p04s2',name:'בלאק אולימפוס 2 ק״ג · סלמון',meta:'Adult',deal:'₪100',img:'img/p04s2.jpg?v=15',mark:'BO'},
+    {id:'p04l2',name:'בלאק אולימפוס 2 ק״ג · כבש',meta:'Adult',deal:'₪100',img:'img/p04l2.jpg?v=15',mark:'BO'},
+    {id:'p04m2',name:'בלאק אולימפוס מיני · עוף והודו',meta:'2 ק״ג · Adult Mini · גזע קטן',deal:'₪100',img:'img/p04m2.jpg?v=15',mark:'BO'},
+    {id:'p14',name:'חטיף לכלב',meta:'מבחר דליסנק / דוג׳יז / אולטרהפט',deal:'₪13.9 · 5 ב־₪50 · 12 ב־₪100',img:'img/p14.jpg?v=15',mark:'TR'}
   ],
   birds:[],
   gear:[
-    {id:'p11',name:'תרסיס פרוטקטור 250 מ״ל',meta:'פרעושים וקרציות · כלב וחתול',deal:'₪120',img:'img/p11.jpg?v=14',mark:'PR'},
-    {id:'p15',name:'משטח גירוד לחתול',meta:'קרטון ~47×23 ס״מ',deal:'₪40 · 2 ב־₪70 · 3 ב־₪99',img:'img/p15.jpg?v=14',mark:'SC'}
+    {id:'p11',name:'תרסיס פרוטקטור 250 מ״ל',meta:'פרעושים וקרציות · כלב וחתול',deal:'₪120',img:'img/p11.jpg?v=15',mark:'PR'},
+    {id:'p15',name:'משטח גירוד לחתול',meta:'קרטון ~47×23 ס״מ',deal:'₪40 · 2 ב־₪70 · 3 ב־₪99',img:'img/p15.jpg?v=15',mark:'SC'}
   ]
 };
 const TITLES={cats:'חתולים',rodents:'מכרסמים',dogs:'כלבים',birds:'ציפורים',gear:'ציוד והדברה'};
