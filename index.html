@@ -116,7 +116,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
   <div class="bridge">הזמנות מתקבלות עד 19:00 · משלוח באותו יום בימי פעילות, לאחר בדיקת מלאי ואישור ההזמנה</div>
   <section id="view-home" class="panel on">
     <div class="hero">
-      <div class="badge">בירור מוצרים והזמנה ללא תשלום באתר</div>
+      <div class="badge">דף ההזמנות בבנייה · מוצרים נוספים יתווספו בהמשך</div>
       <h2 id="home-title" tabindex="-1">בוחרים מוצרים. בודקים פרטים. שולחים בוואטסאפ.</h2>
       <div class="pills">
         <span class="pill">הזמנות מתקבלות עד <strong>19:00</strong></span>
@@ -127,9 +127,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
     </div>
     <div class="cats-wrap"><div class="cats" aria-label="קטגוריות מוצרים">
       <button class="cat active" data-cat="cats" type="button" aria-pressed="true">🐈 חתולים</button>
-      <button class="cat" data-cat="rodents" type="button" aria-pressed="false">🐹 מכרסמים</button>
       <button class="cat" data-cat="dogs" type="button" aria-pressed="false">🐕 כלבים</button>
-      <button class="cat" data-cat="birds" type="button" aria-pressed="false">🐦 ציפורים</button>
       <button class="cat" data-cat="gear" type="button" aria-pressed="false">🧴 ציוד והדברה</button>
     </div></div>
     <div class="section">
@@ -228,9 +226,9 @@ const PRODUCTS={
     {id:'p08d',name:'פרופלאן Delicate 3 ק״ג',meta:'עיכול עדין',deal:'₪139',img:'img/p08d.jpg?v=26',mark:'PP',unit:139},
     {id:'p08r',name:'פרופלאן Renal Plus 3 ק״ג',meta:'Pro Plan · חתולים',deal:'₪139',img:'img/p08r.jpg?v=26',mark:'PP',unit:139},
     {id:'p09',name:'פריסקיז פארטי',meta:'חטיף חתול 60 ג׳',deal:'₪15 · 4 ב־₪50',img:'img/p09.jpg?v=26',mark:'FR',unit:15,bundles:[[4,50]]},
-    {id:'p10',name:'חול אברקלין 10 ל׳',meta:'Ever Clean · מתגבש',deal:'₪100',img:'img/p10.jpg?v=26',mark:'EC',unit:100},
-    {id:'p12',name:'חול קריסטל Gatoline',meta:'קריסטל לחתול',deal:'₪30 · 5 ב־₪100',img:'img/p12.jpg?v=26',mark:'CR',unit:30,bundles:[[5,100]]},
-    {id:'p13',name:'Fancy Feast לחתול',meta:'מגוון טעמים · פחית',deal:'₪6 ליחידה',img:'img/p13.jpg?v=26',mark:'FF',unit:6}
+    {id:'p10',name:'חול אברקלין 10 ל׳',meta:'Ever Clean · דגמים שונים באותו מחיר',deal:'₪100',img:'img/p10.jpg?v=26',mark:'EC',unit:100},
+    {id:'p12',name:'חול קריסטל Gatoline 3.6 ל׳',meta:'קריסטל לחתול',deal:'₪30 · 5 ב־₪100',img:'img/p12.jpg?v=26',mark:'CR',unit:30,bundles:[[5,100]]},
+    {id:'p13',name:'Fancy Feast לחתול',meta:'פחית 85 גרם · ציינו טעם בהערות',deal:'₪6 ליחידה',img:'img/p13.jpg?v=26',mark:'FF',unit:6}
   ],
   rodents:[],
   dogs:[
@@ -250,7 +248,7 @@ const PRODUCTS={
   birds:[],
   gear:[
     {id:'p11',name:'תרסיס פרוטקטור 250 מ״ל',meta:'לבדיקת התאמה לפי הוראות האריזה',deal:'₪120',img:'img/p11.jpg?v=26',mark:'PR',unit:120},
-    {id:'p15',name:'משטח גירוד לחתול',meta:'קרטון ~47×23 ס״מ',deal:'₪40 · 2 ב־₪70 · 3 ב־₪99',img:'img/p15.jpg?v=26',mark:'SC',unit:40,bundles:[[2,70],[3,99]]}
+    {id:'p15',name:'משטח גירוד לחתול',meta:'קרטון 47×23 ס״מ',deal:'₪40 · 2 ב־₪70 · 3 ב־₪99',img:'img/p15.jpg?v=26',mark:'SC',unit:40,bundles:[[2,70],[3,99]]}
   ]
 };
 const TITLES={cats:'חתולים',rodents:'מכרסמים',dogs:'כלבים',birds:'ציפורים',gear:'ציוד והדברה'};
