@@ -25,7 +25,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .hero{margin:12px 14px 8px;padding:20px;border-radius:var(--radius);background:linear-gradient(150deg,#fff,#f4eee5 70%,#eef4ed);border:1px solid var(--line)}
 .badge{display:inline-flex;padding:5px 10px;border-radius:999px;background:rgba(89,182,105,.14);border:1px solid rgba(21,59,49,.32);color:#153b31;font-size:13px;font-weight:700;margin-bottom:8px}
 .hero h2{margin:0 0 10px;font-family:Rubik,Heebo,sans-serif;font-size:20px;font-weight:800}
-.pills{display:flex;flex-direction:column;gap:6px}
+.pills{display:grid;grid-template-columns:1.4fr 1fr;gap:8px}
 .pill{padding:8px 12px;border-radius:12px;background:rgba(255,255,255,.75);border:1px solid var(--line2);font-size:14px;line-height:1.45;display:flex;align-items:center;justify-content:center;text-align:center;min-height:44px}
 
 
@@ -46,7 +46,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .card{display:grid;grid-template-columns:72px 1fr auto;gap:10px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px}
 .card .photo-fallback{width:72px;height:72px;border-radius:12px;background:var(--panel);display:grid;place-items:center;color:var(--text);font-size:14px;font-weight:800;text-align:center}
-.card img{width:72px;height:72px;object-fit:cover;border-radius:12px;background:#000;image-orientation:none}
+.card img{width:72px;height:72px;object-fit:cover;border-radius:12px;background:var(--panel);image-orientation:none}
 .card .name{font-weight:700;font-size:16px;line-height:1.35}
 .card .meta{font-size:13px;color:var(--muted);margin-top:2px}
 .card .deal{font-size:14px;color:var(--gold);font-weight:700;margin-top:4px}
@@ -100,7 +100,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .modal .sum{font-size:13px;line-height:1.55;white-space:pre-wrap;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;margin:10px 0 12px}
 .modal .row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
-@media(max-width:680px){.grid{grid-template-columns:1fr}.card{grid-template-columns:72px 1fr auto}.hero{padding:16px}}
+@media(max-width:680px){.grid{grid-template-columns:1fr}.card{grid-template-columns:72px 1fr auto}.hero{padding:16px}.pills{grid-template-columns:1fr}}
 @media(max-width:360px){.card{grid-template-columns:60px 1fr auto;gap:7px;padding:8px}.card img,.card .photo-fallback{width:60px;height:60px}.qty{gap:3px}.qty button{width:40px;height:44px}.titles h1{font-size:14px}}
 </style>
 </head>
@@ -119,7 +119,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
       <div class="badge">דף ההזמנות בבנייה · מוצרים נוספים יתווספו בהמשך</div>
       <h2 id="home-title" tabindex="-1">בוחרים מוצרים. בודקים פרטים. שולחים בוואטסאפ.</h2>
       <div class="pills">
-        <span class="pill">הזמנות מתקבלות עד <strong>19:00</strong></span>
         <span class="pill">משלוח חינם בהזמנה מעל <strong>150 ₪</strong> · עד הסכום הזה <strong>30 ₪</strong></span>
         <span class="pill">אפשר לבחור משלוח או איסוף עצמי</span>
       </div>
