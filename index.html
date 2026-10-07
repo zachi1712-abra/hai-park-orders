@@ -3,145 +3,153 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-<meta name="theme-color" content="#0d1114"/>
+<meta name="theme-color" content="#153b31"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
-<title>חי פארק מזון וציוד לבעלי חיים — הזמנה</title>
+<title>בירור מוצרים והזמנה | חי פארק — מזון וציוד לבעלי חיים</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=Rubik:wght@700;800&display=swap" rel="stylesheet"/>
 <style>
-:root{--orange:#C03800;--teal:#38E890;--gold:#F8B860;--bg:#25292d;--card:#0d1114;--panel:#11161a;--line:#383f45;--line2:#4b555d;--text:#fff;--muted:#b8c0c4;--soft:#e8eaec;--safe-b:env(safe-area-inset-bottom,0px);--radius:18px}
+:root{--orange:#c4511b;--teal:#59b669;--gold:#c4511b;--bg:#fbf8f2;--card:#fff;--panel:#f4eee5;--line:#d8ded5;--line2:#b6c7ba;--text:#18342b;--muted:#455c50;--soft:#18342b;--safe-b:env(safe-area-inset-bottom,0px);--radius:18px}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;font-family:Heebo,system-ui,sans-serif;background:var(--bg);color:var(--text)}
 body{padding-bottom:calc(92px + var(--safe-b))}
 button,input,select,textarea{font:inherit;color:inherit}
-.app{max-width:430px;margin:0 auto;min-height:100vh}
-.topbar{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:12px;padding:10px 14px;background:rgba(13,17,20,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.app{max-width:1060px;margin:0 auto;min-height:100vh}
+.topbar{position:relative;z-index:30;display:flex;align-items:center;gap:12px;padding:10px 14px;background:rgba(255,255,255,.95);border-bottom:1px solid var(--line)}
 .logo-shell{width:58px;height:58px;min-width:58px;padding:0;border-radius:50%;background:transparent;display:grid;place-items:center;overflow:hidden}
 .logo-shell img{width:100%;height:100%;object-fit:contain;border-radius:50%}
 .titles{flex:1;min-width:0}
-.titles h1{margin:0;font-family:Rubik,Heebo,sans-serif;font-size:13px;font-weight:800;line-height:1.3}
-.titles p{margin:3px 0 0;font-size:12px;color:var(--muted)}
-.hero{margin:12px 14px 8px;padding:14px;border-radius:var(--radius);background:linear-gradient(160deg,#0d1114,#13201a 70%,#1a1810);border:1px solid var(--line)}
-.badge{display:inline-flex;padding:5px 10px;border-radius:999px;background:rgba(56,232,144,.14);border:1px solid rgba(56,232,144,.4);color:var(--teal);font-size:12px;font-weight:700;margin-bottom:8px}
+.titles h1{margin:0;font-family:Rubik,Heebo,sans-serif;font-size:clamp(15px,2vw,20px);font-weight:800;line-height:1.3}
+.titles p{margin:3px 0 0;font-size:13px;color:var(--muted)}
+.hero{margin:12px 14px 8px;padding:20px;border-radius:var(--radius);background:linear-gradient(150deg,#fff,#f4eee5 70%,#eef4ed);border:1px solid var(--line)}
+.badge{display:inline-flex;padding:5px 10px;border-radius:999px;background:rgba(89,182,105,.14);border:1px solid rgba(21,59,49,.32);color:#153b31;font-size:13px;font-weight:700;margin-bottom:8px}
 .hero h2{margin:0 0 10px;font-family:Rubik,Heebo,sans-serif;font-size:20px;font-weight:800}
-.pills{display:flex;flex-direction:column;gap:6px}
-.pill{padding:8px 12px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid var(--line2);font-size:12px;line-height:1.35;display:flex;align-items:center;justify-content:center;text-align:center;min-height:40px}
+.pills{display:grid;grid-template-columns:1.4fr 1fr;gap:8px}
+.pill{padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.75);border:1px solid var(--line2);font-size:14px;line-height:1.45;display:block;text-align:center;min-height:44px}
 
 
 .pill strong{color:var(--gold)}
 .soft-note{margin:10px 0 0;font-size:12px;color:var(--muted);line-height:1.4}
-.bridge{margin:14px 14px 6px;padding:10px 12px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--line);font-size:15px;font-weight:700;line-height:1.35;text-align:center;color:var(--soft)}
+.bridge{margin:14px 14px 6px;padding:10px 12px;border-radius:14px;background:#fff;border:1px solid var(--line);font-size:15px;font-weight:700;line-height:1.45;text-align:center;color:var(--soft)}
 .topbar{margin-bottom:0}
 .hero{margin-top:10px}
-.cats-wrap{margin-top:8px;position:sticky;top:69px;z-index:25;background:linear-gradient(#25292d 70%,rgba(37,41,45,0))}
+.cats-wrap{margin-top:8px;position:sticky;top:0;z-index:25;background:linear-gradient(#fbf8f2 80%,rgba(251,248,242,0))}
 .cats{display:flex;gap:8px;overflow-x:auto;padding:6px 14px 10px;scrollbar-width:none}
 .cats::-webkit-scrollbar{display:none}
-.cat{flex:0 0 auto;appearance:none;border:1px solid var(--line2);background:var(--panel);border-radius:999px;padding:10px 14px;font-weight:700;font-size:13px;cursor:pointer;white-space:nowrap}
-.cat.active{background:rgba(56,232,144,.16);border-color:var(--teal)}
+.cat{flex:0 0 auto;appearance:none;border:1px solid var(--line2);background:var(--card);border-radius:999px;padding:10px 14px;font-weight:700;font-size:14px;min-height:44px;cursor:pointer;white-space:nowrap}
+.cat.active{background:rgba(89,182,105,.17);border-color:#427d4a}
 .section{padding:0 14px 8px}
 .section-head{display:flex;justify-content:space-between;align-items:baseline;margin:4px 0 10px}
 .section-head h3{margin:0;font-size:15px}
 .section-head span{font-size:12px;color:var(--muted)}
-.grid{display:flex;flex-direction:column;gap:10px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .card{display:grid;grid-template-columns:72px 1fr auto;gap:10px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px}
-.card img{width:72px;height:72px;object-fit:cover;border-radius:12px;background:#000;image-orientation:none}
-.card .name{font-weight:700;font-size:13.5px;line-height:1.3}
-.card .meta{font-size:11.5px;color:var(--muted);margin-top:2px}
-.card .deal{font-size:12px;color:var(--gold);font-weight:700;margin-top:4px}
+.card .photo-fallback{width:72px;height:72px;border-radius:12px;background:var(--panel);display:grid;place-items:center;color:var(--text);font-size:14px;font-weight:800;text-align:center}
+.card img{width:72px;height:72px;object-fit:cover;border-radius:12px;background:var(--panel);image-orientation:none}
+.card .name{font-weight:700;font-size:16px;line-height:1.35}
+.card .meta{font-size:13px;color:var(--muted);margin-top:2px}
+.card .deal{font-size:14px;color:var(--gold);font-weight:700;margin-top:4px}
 .qty{display:flex;align-items:center;gap:6px}
-.qty button{width:36px;height:36px;border-radius:12px;border:1px solid var(--line2);background:var(--panel);font-size:18px;font-weight:700;cursor:pointer}
-.qty button.plus{background:var(--gold);border-color:transparent;color:#1a1208}
+.qty button{width:44px;height:44px;border-radius:12px;border:1px solid var(--line2);background:var(--panel);font-size:20px;font-weight:700;cursor:pointer}
+.qty button.plus{background:var(--teal);border-color:transparent;color:#102b24}
 .qty span{min-width:16px;text-align:center;font-weight:700;font-size:13px}
 .missing{padding:6px 14px 16px}
-.missing button{width:100%;appearance:none;border:1.5px dashed rgba(248,184,96,.55);background:rgba(248,184,96,.06);color:var(--gold);border-radius:14px;padding:13px;font-weight:700;cursor:pointer}
-.footer{padding:4px 16px 20px;font-size:11px;color:var(--muted);text-align:center;line-height:1.55}
+.missing button{width:100%;appearance:none;border:1.5px dashed #b5704d;background:#fff;color:#9c421c;border-radius:14px;padding:13px;font-weight:700;cursor:pointer}
+.footer{padding:4px 16px 20px;font-size:13px;color:var(--muted);text-align:center;line-height:1.55}
 .panel{display:none}.panel.on{display:block}
 .cart-top{padding:14px 14px 0}
 .steps{display:flex;gap:8px;margin-bottom:12px}
 .step{flex:1;text-align:center;padding:8px;border-radius:12px;background:var(--panel);border:1px solid var(--line);font-size:12px;color:var(--muted);font-weight:600}
-.step.on{border-color:var(--teal);color:var(--teal);background:rgba(56,232,144,.08)}
+.step.on{border-color:#427d4a;color:#153b31;background:rgba(89,182,105,.12)}
 .form{padding:0 14px 8px}
-.form label{display:block;font-size:12px;font-weight:600;margin:12px 0 6px;color:var(--muted)}
+.form label{display:block;font-size:15px;font-weight:700;margin:12px 0 6px;color:var(--text)}
 .form input,.form select,.form textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:13px 14px;background:var(--card)}
+.form fieldset{border:1px solid var(--line);border-radius:12px;margin:16px 0;padding:12px}.form legend{font-size:16px;font-weight:700;padding-inline:6px}.fulfillment-choices{display:flex;gap:14px}.form .radio-label{display:flex;gap:8px;align-items:center;margin:0;font-weight:600}.form .radio-label input{width:20px;height:20px;accent-color:#277547}.form-error{display:none;border:2px solid #a33e21;background:#fff3ee;padding:12px;border-radius:10px;margin:12px 14px;color:#7c2e18;font-weight:700}.form-error.on{display:block}
+.form .field-error{display:block;color:#7c2e18;font-size:14px;font-weight:700;margin-top:4px}.form [aria-invalid="true"]{border-color:#a33e21;border-width:2px}
 .form textarea{min-height:72px;resize:vertical}
 .cart-lines{display:flex;flex-direction:column;gap:8px;padding:0 14px}
 .cart-line{display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 12px;font-size:13px}
 .cart-line button{appearance:none;border:0;background:transparent;color:var(--orange);font-weight:700;cursor:pointer;font-size:12px}
-.pay-note{margin:12px 14px;padding:12px;border-radius:14px;background:rgba(56,232,144,.08);border:1px solid rgba(56,232,144,.3);font-size:12.5px;line-height:1.45}
+.pay-note{margin:12px 14px;padding:12px;border-radius:14px;background:rgba(89,182,105,.1);border:1px solid #9bbb9e;font-size:15px;line-height:1.55}
 .actions{padding:0 14px 20px}
 .primary,.ghost{width:100%;border-radius:14px;padding:14px;font-weight:800;cursor:pointer;border:0}
-.primary{background:var(--orange);color:#fff;margin-top:4px}
+.primary{background:var(--teal);color:#102b24;margin-top:4px}
 .ghost{background:transparent;border:1px solid var(--line2);margin-top:8px}
 .empty{color:var(--muted);font-size:13px;padding:12px 14px;text-align:center}
 .cart-total{margin:10px 14px 0;padding:12px;border-radius:14px;background:rgba(248,184,96,.1);border:1px solid rgba(248,184,96,.35);font-size:14px;line-height:1.45}
 .cart-total strong{color:var(--gold);font-size:16px}
 .ship-meter{margin-top:10px;font-size:13px;color:var(--soft)}
-.ship-meter.ok{color:var(--teal);font-weight:700}
-.ship-bar{margin-top:6px;height:6px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}
+.ship-meter.ok{color:#276b38;font-weight:700}
+.ship-bar{margin-top:6px;height:6px;border-radius:999px;background:var(--line);overflow:hidden}
 .ship-bar span{display:block;height:100%;background:var(--gold);border-radius:999px}
 .done-box{padding:40px 20px 24px;text-align:center}
-.done-emoji{width:64px;height:64px;margin:0 auto 14px;border-radius:50%;background:rgba(56,232,144,.15);border:1px solid rgba(56,232,144,.4);display:grid;place-items:center;font-size:28px;color:var(--teal)}
+.done-emoji{width:64px;height:64px;margin:0 auto 14px;border-radius:50%;background:rgba(89,182,105,.15);border:1px solid #9bbb9e;display:grid;place-items:center;font-size:28px;color:#276b38}
 .done-box h2{margin:0 0 10px;font-family:Rubik,Heebo,sans-serif;font-size:22px}
 .done-box p{margin:0 0 22px;color:var(--muted);font-size:14px;line-height:1.55}
-.dock{position:fixed;bottom:0;left:0;right:0;z-index:40;max-width:430px;margin:0 auto;padding:10px 12px calc(10px + var(--safe-b));background:rgba(13,17,20,.96);backdrop-filter:blur(14px);border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1.35fr;gap:8px}
+.dock{position:fixed;bottom:0;left:0;right:0;z-index:40;max-width:1060px;margin:0 auto;padding:10px 12px calc(10px + var(--safe-b));background:rgba(255,255,255,.97);backdrop-filter:blur(14px);border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1.35fr;gap:8px}
 .dock button{appearance:none;border:0;border-radius:14px;padding:14px 10px;font-weight:800;font-size:14px;cursor:pointer}
 .dock .wa{background:transparent;color:var(--muted);border:1px solid var(--line2)}
-.dock .cartbtn{background:var(--gold);color:#1a1208}
-.dock .cartbtn.has{box-shadow:0 6px 20px rgba(248,184,96,.35)}
-.dock .count{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 5px;margin-inline-start:6px;border-radius:999px;background:#1a1208;color:var(--gold);font-size:11px;font-weight:800}
+.dock .cartbtn{background:var(--teal);color:#102b24}
+.dock .cartbtn.has{box-shadow:0 6px 20px rgba(89,182,105,.25)}
+.dock .count{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 5px;margin-inline-start:6px;border-radius:999px;background:#102b24;color:#fff;font-size:11px;font-weight:800}
 .modal-bg{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.62);display:none;align-items:flex-end;justify-content:center;padding:12px;padding-bottom:calc(12px + var(--safe-b))}
 .modal-bg.on{display:flex}
 .modal{width:100%;max-width:430px;max-height:78vh;overflow:auto;background:var(--card);border:1px solid var(--line);border-radius:20px 20px 16px 16px;padding:16px 14px 14px}
 .modal h3{margin:0 0 8px;font-size:16px;font-family:Rubik,Heebo,sans-serif}
 .modal .sum{font-size:13px;line-height:1.55;white-space:pre-wrap;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;margin:10px 0 12px}
 .modal .row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+@media(max-width:680px){.grid{grid-template-columns:1fr}.card{grid-template-columns:72px 1fr auto}.hero{padding:16px}.pills{grid-template-columns:1fr}}
+@media(max-width:360px){.card{grid-template-columns:60px 1fr auto;gap:7px;padding:8px}.card img,.card .photo-fallback{width:60px;height:60px}.qty{gap:3px}.qty button{width:40px;height:44px}.titles h1{font-size:14px}}
 </style>
 </head>
 <body>
 <div class="app">
   <header class="topbar">
-    <div class="logo-shell"><img src="logo-canonical-web.png?v=26" alt="לוגו חי פארק מזון וציוד לבעלי חיים" width="48" height="48"/></div>
+    <div class="logo-shell"><img src="logo-canonical-web.png?v=26" alt="הלוגו של חי פארק — מזון וציוד לבעלי חיים" width="48" height="48"/></div>
     <div class="titles">
-      <h1><span style="color:var(--orange)">חי פארק</span> <span style="color:var(--muted);font-weight:600">מזון וציוד לבעלי חיים</span> <span style="color:var(--orange)">קריית חיים</span></h1>
+      <h1>חי פארק — מזון וציוד לבעלי חיים</h1>
       <p>קריית חיים · קריית ים · קריית מוצקין · קריית ביאליק</p>
     </div>
   </header>
-  <div class="bridge">משלוחים מהיום להיום — הזמנה עד 19:00 = משלוח היום</div>
+  <div class="bridge">הזמנות מתקבלות עד 19:00 · משלוח באותו יום בימי פעילות, לאחר בדיקת מלאי ואישור ההזמנה</div>
   <section id="view-home" class="panel on">
     <div class="hero">
-      <div class="badge">● הזמנת היום, קיבלת היום</div>
-      <h2>בוחרים. שולחים בוואטסאפ. מאשרים מלאי — ורק אז משלמים.</h2>
+      <div class="badge">דף ההזמנות בבנייה · מוצרים נוספים יתווספו בהמשך</div>
+      <h2 id="home-title" tabindex="-1">בוחרים מוצרים. בודקים פרטים. שולחים בוואטסאפ.</h2>
       <div class="pills">
-        <span class="pill">הזמנה עד <strong>19:00</strong> = משלוח היום</span>
-        <span class="pill">משלוח חינם מעל <strong>150 ש״ח</strong> · מתחת לזה <strong>₪30</strong></span>
-        <span class="pill">עולים לכל קומה ללא תוספת תשלום</span>
+        <span class="pill">משלוח חינם בהזמנה מעל <strong>150 ₪</strong> · עד הסכום הזה <strong>30 ₪</strong></span>
+        <span class="pill">אפשר לבחור משלוח או איסוף עצמי</span>
       </div>
       
     </div>
-    <div class="cats-wrap"><div class="cats" role="tablist">
-      <button class="cat active" data-cat="cats" type="button">🐈 חתולים</button>
-      <button class="cat" data-cat="rodents" type="button">🐹 מכרסמים</button>
-      <button class="cat" data-cat="dogs" type="button">🐕 כלבים</button>
-      <button class="cat" data-cat="birds" type="button">🐦 ציפורים</button>
-      <button class="cat" data-cat="gear" type="button">🧴 ציוד והדברה</button>
+    <div class="cats-wrap"><div class="cats" aria-label="קטגוריות מוצרים">
+      <button class="cat active" data-cat="cats" type="button" aria-pressed="true">🐈 חתולים</button>
+      <button class="cat" data-cat="dogs" type="button" aria-pressed="false">🐕 כלבים</button>
+      <button class="cat" data-cat="gear" type="button" aria-pressed="false">🧴 ציוד והדברה</button>
     </div></div>
     <div class="section">
-      <div class="section-head"><h3 id="cat-title">חתולים</h3><span>לחצו + להוספה</span></div>
+      <div class="section-head"><h3 id="cat-title" tabindex="-1">חתולים</h3><span>לחצו + להוספה</span></div>
       <div class="grid" id="product-grid"></div>
     </div>
     <div class="missing"><button type="button" id="btn-missing">לא מצאת? כתבו לנו בוואטסאפ 💬</button></div>
-    <p class="footer">שדרות דגניה 30 פינת זלמן ארן 1, קריית חיים · 053-256-99-89<br/>מלאי משתנה · המחיר הסופי באישור החנות</p>
+    <p class="footer">חי פארק — מזון וציוד לבעלי חיים · שדרות דגניה 30 פינת זלמן ארן 1, קריית חיים · 053-256-9989<br/>מלאי ומועד משלוח מאושרים בשיחה · <a href="https://sites.google.com/view/haipark/privacy">מדיניות פרטיות</a></p>
   </section>
   <section id="view-cart" class="panel">
     <div class="cart-top">
       <div class="steps"><div class="step">1 · מוצרים</div><div class="step on">2 · פרטים ושליחה</div></div>
-      <h3 style="margin:0 0 10px;font-size:16px">הסל שלכם</h3>
+      <h3 id="cart-title" tabindex="-1" style="margin:0 0 10px;font-size:20px">הסל שלכם</h3>
     </div>
     <div id="cart-lines" class="cart-lines"></div>
     <div class="form">
+      <fieldset><legend>איך תרצו לקבל את המוצרים?</legend><div class="fulfillment-choices">
+        <label class="radio-label"><input type="radio" name="fulfillment" value="delivery" checked/> משלוח</label>
+        <label class="radio-label"><input type="radio" name="fulfillment" value="pickup"/> איסוף עצמי</label>
+      </div></fieldset>
       <label for="name">שם</label><input id="name" autocomplete="name" required placeholder="איך לקרוא לכם"/>
       <label for="phone">טלפון</label><input id="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="05X-XXX-XXXX"/>
+      <div id="delivery-fields">
       <label for="city">עיר</label>
       <select id="city" required>
         <option value="">בחרו קריה</option>
@@ -165,11 +173,13 @@ button,input,select,textarea{font:inherit;color:inherit}
           <input id="floor" placeholder="3 / קרקע"/>
         </div>
       </div>
+      </div>
       <label for="notes">הערות / טעם מועדף (רשות)</label><textarea id="notes" placeholder="טעם, קוד בניין, שעה, כניסה אחרת…"></textarea>
     </div>
-    <div class="pay-note">שולחים בוואטסאפ — מאשרים מלאי ומחיר סופי. <strong>בלי תשלום בדף.</strong></div>
+    <div class="form-error" id="form-error" role="alert" tabindex="-1"></div>
+    <div class="pay-note">הפרטים שתמלאו יופיעו בהודעת WhatsApp שתבחרו לשלוח. צריך ללחוץ בה על ״שלח״. נאשר מלאי, מחיר ומועד קבלה לפני השלמת ההזמנה. פניות מחוץ לשעות הפעילות נענות כשהחנות חוזרת לפעול. <strong>בלי תשלום בדף.</strong> <a href="https://sites.google.com/view/haipark/privacy">מדיניות פרטיות</a> · <a href="tel:0532569989">התקשרו אלינו</a></div>
     <div class="actions">
-      <button class="primary" type="button" id="btn-send">שליחה בוואטסאפ ✓</button>
+      <button class="primary" type="button" id="btn-send">בדיקת הבקשה ופתיחת WhatsApp</button>
       <button class="ghost" type="button" id="btn-back">חזרה למוצרים</button>
     </div>
   </section>
@@ -177,19 +187,21 @@ button,input,select,textarea{font:inherit;color:inherit}
   <section id="view-done" class="panel">
     <div class="done-box">
       <div class="done-emoji">✓</div>
-      <h2>פתחנו וואטסאפ</h2>
-      <p>שלחו את ההודעה אם עדיין לא נשלחה.<br/>אנחנו נחזור אליכם בטלפון לאישור מלאי ומחיר סופי — ורק אז משלמים.</p>
+      <h2 id="done-title" tabindex="-1">WhatsApp נפתח עם הודעה מוכנה</h2>
+      <p>כדי שהפנייה תגיע אלינו, לחצו על ״שלח״ ב־WhatsApp. לאחר מכן נאשר איתכם מלאי, מחיר ומועד קבלה.</p>
+      <button class="ghost" type="button" id="btn-reopen-wa">פתחו שוב את ההודעה</button>
+      <a href="tel:0532569989">נתקעתם? התקשרו אלינו: 053-256-9989</a>
       <button class="primary" type="button" id="btn-done-home">חזרה לדף הראשי</button>
     </div>
   </section>
-  <div class="modal-bg" id="confirm-modal" role="dialog" aria-modal="true">
+  <div class="modal-bg" id="confirm-modal" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
     <div class="modal">
-      <h3>מוכנים לשלוח?</h3>
-      <p style="margin:0;font-size:12px;color:var(--muted)">נפתח וואטסאפ עם ההזמנה. בלי תשלום כאן.</p>
-      <div class="sum" id="confirm-sum"></div>
+      <h3 id="confirm-title">בדקו את פרטי הבקשה</h3>
+      <p style="margin:0;font-size:14px;color:var(--muted)">נפתח WhatsApp עם הודעה מוכנה. רק לחיצה על ״שלח״ ב־WhatsApp תעביר אותה אלינו.</p>
+      <div class="sum" id="confirm-sum" tabindex="0" role="document" aria-label="סיכום הבקשה לבדיקה"></div>
       <div class="row">
         <button class="ghost" type="button" id="btn-confirm-cancel" style="margin:0">תיקון</button>
-        <button class="primary" type="button" id="btn-confirm-ok" style="margin:0">וואטסאפ ✓</button>
+        <button class="primary" type="button" id="btn-confirm-ok" style="margin:0">פתיחת WhatsApp</button>
       </div>
     </div>
   </div>
@@ -203,19 +215,19 @@ const WA='972532569989';
 const PRODUCTS={
   cats:[
     {id:'p01',name:'מיאו מיקס קיטן 6.44 ק״ג',meta:'מזון יבש · חתולים',deal:'₪140',img:'img/p01.jpg?v=26',mark:'MM',unit:140},
-    {id:'p02',name:'מיאו מיקס Tender Centers',meta:'~1.4 ק״ג · חתולים',deal:'₪40 · 2 ב־₪70 · 3 ב־₪100',img:'img/p02.jpg?v=26',mark:'MM',unit:40},
+    {id:'p02',name:'מיאו מיקס Tender Centers',meta:'1.42 ק״ג · חתולים',deal:'₪40 · 2 ב־₪70 · 3 ב־₪100',img:'img/p02.jpg?v=26',mark:'MM',unit:40,bundles:[[2,70],[3,100]]},
     {id:'p03b',name:'ג׳וזי קאט בקר 18 ק״ג',meta:'Josera · חתול בוגר',deal:'₪190',img:'img/p03beef.jpg?v=26',mark:'JC',unit:190},
     {id:'p03d',name:'ג׳וזי קאט עוף 18 ק״ג',meta:'Josera · חתול בוגר · עוף · שק ירוק',deal:'₪190',img:'img/p03chicken.jpg?v=26',mark:'JC',unit:190},
     {id:'p06a',name:'גוסבי עוף־הודו 6 ק״ג',meta:'Exclusive · חתול בוגר',deal:'₪250',img:'img/p06a.jpg?v=26',mark:'GO',unit:250},
     {id:'p06b',name:'גוסבי מסורס 6 ק״ג',meta:'Exclusive · עוף וסלמון',deal:'₪250',img:'img/p06b.jpg?v=26',mark:'GO',unit:250},
-    {id:'p07',name:'אמברוסיה חתולים 5 ק״ג',meta:'סלמון ועוף · הוליסטי · היפואלרגני',deal:'₪250',img:'img/p07.jpg?v=26',mark:'AM',unit:250},
+    {id:'p07',name:'אמברוסיה חתולים 5 ק״ג',meta:'סלמון ועוף',deal:'₪250',img:'img/p07.jpg?v=26',mark:'AM',unit:250},
     {id:'p08k',name:'פרופלאן קיטן 3 ק״ג',meta:'Kitten',deal:'₪139',img:'img/p08k.jpg?v=26',mark:'PP',unit:139},
     {id:'p08d',name:'פרופלאן Delicate 3 ק״ג',meta:'עיכול עדין',deal:'₪139',img:'img/p08d.jpg?v=26',mark:'PP',unit:139},
-    {id:'p08r',name:'פרופלאן Renal Plus 3 ק״ג',meta:'כליות',deal:'₪139',img:'img/p08r.jpg?v=26',mark:'PP',unit:139},
-    {id:'p09',name:'פריסקיז פארטי',meta:'חטיף חתול 60 ג׳',deal:'₪15 · 4 ב־₪50',img:'img/p09.jpg?v=26',mark:'FR',unit:15},
-    {id:'p10',name:'חול אברקלין 10 ל׳',meta:'Ever Clean · מתגבש',deal:'₪100',img:'img/p10.jpg?v=26',mark:'EC',unit:100},
-    {id:'p12',name:'חול קריסטל Gatoline',meta:'קריסטל לחתול',deal:'₪30 · 5 ב־₪100',img:'img/p12.jpg?v=26',mark:'CR',unit:30},
-    {id:'p13',name:'Fancy Feast לחתול',meta:'מגוון טעמים · פחית',deal:'₪6 ליחידה',img:'img/p13.jpg?v=26',mark:'FF',unit:6}
+    {id:'p08r',name:'פרופלאן Renal Plus 3 ק״ג',meta:'Pro Plan · חתולים',deal:'₪139',img:'img/p08r.jpg?v=26',mark:'PP',unit:139},
+    {id:'p09',name:'פריסקיז פארטי',meta:'חטיף חתול 60 ג׳',deal:'₪15 · 4 ב־₪50',img:'img/p09.jpg?v=26',mark:'FR',unit:15,bundles:[[4,50]]},
+    {id:'p10',name:'חול אברקלין 10 ל׳',meta:'Ever Clean · דגמים שונים באותו מחיר',deal:'₪100',img:'img/p10.jpg?v=26',mark:'EC',unit:100},
+    {id:'p12',name:'חול קריסטל Gatoline 3.6 ל׳',meta:'קריסטל לחתול',deal:'₪30 · 5 ב־₪100',img:'img/p12.jpg?v=26',mark:'CR',unit:30,bundles:[[5,100]]},
+    {id:'p13',name:'Fancy Feast לחתול',meta:'פחית 85 גרם · ציינו טעם בהערות',deal:'₪6 ליחידה',img:'img/p13.jpg?v=26',mark:'FF',unit:6}
   ],
   rodents:[],
   dogs:[
@@ -224,17 +236,18 @@ const PRODUCTS={
     {id:'p05al',name:'מונג׳ לכלב בוגר · כבש',meta:'12 ק״ג · Adult',deal:'₪270',img:'img/p05al12.jpg?v=26',mark:'MO',unit:270},
     {id:'p05pl',name:'מונג׳ לכלב גור · כבש',meta:'12 ק״ג · Puppy & Junior',deal:'₪270',img:'img/p05pl12.jpg?v=26',mark:'MO',unit:270},
     {id:'p05h',name:'מונג׳ היפואלרגני · סלמון־טונה',meta:'12 ק״ג · Adult',deal:'₪270',img:'img/p05h12.jpg?v=26',mark:'MO',unit:270},
-    {id:'p04s12',name:'בלאק אולימפוס לכלב · סלמון',meta:'12 ק״ג · Adult · הוליסטי · היפואלרגני',deal:'₪289',img:'img/p04s12.jpg?v=26',mark:'BO',unit:289},
-    {id:'p04l12',name:'בלאק אולימפוס לכלב · כבש',meta:'12 ק״ג · Adult · שק ירוק · הוליסטי · היפואלרגני',deal:'₪289',img:'img/p04l12.jpg?v=26',mark:'BO',unit:289},
+    {id:'p04s12',name:'בלאק אולימפוס לכלב · סלמון',meta:'12 ק״ג · Adult',deal:'₪289',img:'img/p04s12.jpg?v=26',mark:'BO',unit:289},
+    {id:'p04l12',name:'בלאק אולימפוס לכלב · כבש',meta:'12 ק״ג · Adult · שק ירוק',deal:'₪289',img:'img/p04l12.jpg?v=26',mark:'BO',unit:289},
     {id:'p04s2',name:'בלאק אולימפוס 2 ק״ג · סלמון',meta:'Adult',deal:'₪100',img:'img/p04s2.jpg?v=26',mark:'BO',unit:100},
     {id:'p04l2',name:'בלאק אולימפוס 2 ק״ג · כבש',meta:'Adult',deal:'₪100',img:'img/p04l2.jpg?v=26',mark:'BO',unit:100},
     {id:'p04m2',name:'בלאק אולימפוס מיני · עוף והודו',meta:'2 ק״ג · Adult Mini · גזע קטן',deal:'₪100',img:'img/p04m2.jpg?v=26',mark:'BO',unit:100},
-    {id:'p14',name:'חטיף לכלב',meta:'מבחר דליסנק / דוג׳יז / אולטרהפט',deal:'₪13.9 · 5 ב־₪50 · 12 ב־₪100',img:'img/p14.jpg?v=26',mark:'TR',unit:13.9}
+    {id:'p14mix',name:'חטיפי דליסנק ואולטרהפט',meta:'ניתן לשלב בין שני המותגים · ציינו טעם בהערות',deal:'₪13.90 · 5 ב־₪50 · 12 ב־₪100',img:null,mark:'חטיפים',unit:13.9,bundles:[[5,50],[12,100]]},
+    {id:'p14dogiz',name:'חטיפי דוג׳יז',meta:'ציינו טעם בהערות · ללא מבצע כמות',deal:'₪15 ליחידה',img:null,mark:'דוג׳יז',unit:15}
   ],
   birds:[],
   gear:[
-    {id:'p11',name:'תרסיס פרוטקטור 250 מ״ל',meta:'פרעושים וקרציות · כלב וחתול',deal:'₪120',img:'img/p11.jpg?v=26',mark:'PR',unit:120},
-    {id:'p15',name:'משטח גירוד לחתול',meta:'קרטון ~47×23 ס״מ',deal:'₪40 · 2 ב־₪70 · 3 ב־₪99',img:'img/p15.jpg?v=26',mark:'SC',unit:40}
+    {id:'p11',name:'תרסיס פרוטקטור 250 מ״ל',meta:'לבדיקת התאמה לפי הוראות האריזה',deal:'₪120',img:'img/p11.jpg?v=26',mark:'PR',unit:120},
+    {id:'p15',name:'משטח גירוד לחתול',meta:'קרטון 47×23 ס״מ',deal:'₪40 · 2 ב־₪70 · 3 ב־₪99',img:'img/p15.jpg?v=26',mark:'SC',unit:40,bundles:[[2,70],[3,99]]}
   ]
 };
 const TITLES={cats:'חתולים',rodents:'מכרסמים',dogs:'כלבים',birds:'ציפורים',gear:'ציוד והדברה'};
@@ -243,13 +256,31 @@ const qty=id=>cart[id]||0;
 const all=()=>Object.values(PRODUCTS).flat();
 const find=id=>all().find(p=>p.id===id);
 const count=()=>Object.values(cart).reduce((a,b)=>a+b,0);
-function setQty(id,n){ if(n<=0) delete cart[id]; else cart[id]=n; render(); }
+const pickup=()=>document.querySelector('input[name="fulfillment"]:checked').value==='pickup';
+function priceFor(p,n){
+  const dp=[0];
+  for(let i=1;i<=n;i++){
+    dp[i]=dp[i-1]+p.unit;
+    for(const [size,price] of p.bundles||[]) if(i>=size) dp[i]=Math.min(dp[i],dp[i-size]+price);
+  }
+  return Math.round(dp[n]*100)/100;
+}
+const subtotal=()=>Math.round(Object.keys(cart).reduce((sum,id)=>sum+priceFor(find(id),cart[id]),0)*100)/100;
+const money=n=>Number.isInteger(n)?String(n):n.toFixed(2).replace(/0$/,'');
+function setQty(id,n,control){
+  if(n<=0) delete cart[id]; else cart[id]=n;
+  render();
+  const selector=control==='cart'?`#cart-lines [data-minus="${id}"]`:`#product-grid [data-${control}="${id}"]`;
+  (document.querySelector(selector)||document.getElementById(control==='cart'?'cart-title':'cat-title')).focus();
+}
 function openWA(text){ window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(text),'_blank'); }
 function show(v){
   document.getElementById('view-home').classList.toggle('on',v==='home');
   document.getElementById('view-cart').classList.toggle('on',v==='cart');
   document.getElementById('view-done').classList.toggle('on',v==='done');
   window.scrollTo({top:0,behavior:'smooth'});
+  const heading={home:'home-title',cart:'cart-title',done:'done-title'}[v];
+  document.getElementById(heading)?.focus({preventScroll:true});
 }
 function renderGrid(){
   document.getElementById('cat-title').textContent=TITLES[cat];
@@ -260,16 +291,16 @@ function renderGrid(){
   }
   document.getElementById('product-grid').innerHTML=list.map(p=>`
     <article class="card">
-      <img src="${p.img}" alt="${p.name}" loading="lazy" width="72" height="72"/>
+      ${p.img?`<img src="${p.img}" alt="${p.name}" loading="lazy" width="72" height="72"/>`:`<span class="photo-fallback" aria-hidden="true">${p.mark}</span>`}
       <div>
         <div class="name">${p.name}</div>
         <div class="meta">${p.meta}</div>
         <div class="deal">${p.deal}</div>
       </div>
       <div class="qty">
-        <button type="button" data-minus="${p.id}">−</button>
-        <span>${qty(p.id)}</span>
-        <button class="plus" type="button" data-plus="${p.id}">+</button>
+        <button type="button" data-minus="${p.id}" aria-label="הפחתת ${p.name}">−</button>
+        <span aria-label="כמות ${p.name}" aria-live="polite">${qty(p.id)}</span>
+        <button class="plus" type="button" data-plus="${p.id}" aria-label="הוספת ${p.name}">+</button>
       </div>
     </article>`).join('');
 }
@@ -282,74 +313,103 @@ function renderCart(){
   if(!ids.length){ el.innerHTML='<div class="empty">הסל ריק — הוסיפו משהו 🐾</div>'; return; }
   const lines=ids.map(id=>{
     const p=find(id);
-    return `<div class="cart-line"><span>${p.name} × ${cart[id]}<br/><small style="color:var(--muted)">${p.deal}</small></span><button type="button" data-minus="${id}">הסרה</button></div>`;
+    return `<div class="cart-line"><span>${p.name} × ${cart[id]}<br/><small style="color:var(--muted)">מחיר מוצרים: ₪${money(priceFor(p,cart[id]))} · ${p.deal}</small></span><button type="button" data-minus="${id}" aria-label="הסרת ${p.name}">הסרה</button></div>`;
   }).join('');
-  const total=ids.reduce((s,id)=>{ const p=find(id); const u=Number(p&&p.unit)||0; return s+u*cart[id]; },0);
-  const freeNeed=150;
-  const left=Math.max(0, Math.ceil((freeNeed-total)*10)/10);
-  const pct=Math.min(100, Math.round((total/freeNeed)*100));
-  const shipLine=total<=0?'':
-    (total>=freeNeed
-      ? `<div class="ship-meter ok">✓ משלוח חינם בהזמנה זו</div>`
-      : `<div class="ship-meter">משלוח כעת <strong>₪30</strong> · עוד <strong>₪${left % 1 ? left.toFixed(1) : left}</strong> למשלוח חינם<div class="ship-bar"><span style="width:${pct}%"></span></div></div>`);
-  const shipFee=total>0 && total<150 ? 30 : 0;
+  const total=subtotal();
+  const shipFee=pickup()||total>150?0:30;
   const grand=total+shipFee;
+  const shipLine=pickup()?'איסוף עצמי · אין דמי משלוח':shipFee?'משלוח ₪30 · חינם בסכום מוצרים מעל ₪150':'✓ משלוח חינם בהזמנה זו';
   const totalHtml=total>0
-    ? `<div class="cart-total">סה״כ משוער: <strong>₪${grand % 1 ? grand.toFixed(1) : grand}</strong>${shipFee?` <small>(כולל משלוח ₪30)</small>`:''}<br/><small>לפני אישור מלאי · מבצעים לפי כמות יחושבו בחנות</small>${shipLine}</div>`
+    ? `<div class="cart-total">מוצרים: <strong>₪${money(total)}</strong><br/>${shipLine}<br/>סה״כ משוער: <strong>₪${money(grand)}</strong><br/><small>המבצעים לפי כמות מחושבים בסל · בכפוף לאישור מלאי ומחיר סופי בחנות</small></div>`
     : `<div class="cart-total"><small>סה״כ יאושר בוואטסאפ / בחנות</small></div>`;
   el.innerHTML=lines+totalHtml;
 }
 function render(){ renderGrid(); renderCart(); }
 document.querySelector('.cats').addEventListener('click',e=>{
   const b=e.target.closest('.cat'); if(!b) return;
-  document.querySelectorAll('.cat').forEach(x=>x.classList.remove('active'));
-  b.classList.add('active'); cat=b.dataset.cat; renderGrid();
+  document.querySelectorAll('.cat').forEach(x=>{x.classList.remove('active');x.setAttribute('aria-pressed','false')});
+  b.classList.add('active');b.setAttribute('aria-pressed','true');cat=b.dataset.cat;renderGrid();
 });
+document.querySelectorAll('input[name="fulfillment"]').forEach(x=>x.addEventListener('change',()=>{
+  const delivery=!pickup();
+  document.getElementById('delivery-fields').hidden=!delivery;
+  document.getElementById('city').required=delivery;
+  document.getElementById('street').required=delivery;
+  renderCart();
+}));
 document.getElementById('product-grid').addEventListener('click',e=>{
   const plus=e.target.closest('[data-plus]');
   const minus=e.target.closest('[data-minus]');
-  if(plus) setQty(plus.dataset.plus, qty(plus.dataset.plus)+1);
-  if(minus) setQty(minus.dataset.minus, qty(minus.dataset.minus)-1);
+  if(plus) setQty(plus.dataset.plus, qty(plus.dataset.plus)+1,'plus');
+  if(minus) setQty(minus.dataset.minus, qty(minus.dataset.minus)-1,'minus');
 });
 document.getElementById('cart-lines').addEventListener('click',e=>{
   const minus=e.target.closest('[data-minus]');
-  if(minus) setQty(minus.dataset.minus,0);
+  if(minus) setQty(minus.dataset.minus,0,'cart');
 });
 document.getElementById('btn-cart').onclick=()=>show('cart');
 document.getElementById('btn-back').onclick=()=>show('home');
-document.getElementById('btn-wa-fab').onclick=()=>openWA('שלום מחי פארק מזון וציוד לבעלי חיים 👋\nאשמח לעזרה בהזמנה.');
-document.getElementById('btn-missing').onclick=()=>openWA('שלום מחי פארק מזון וציוד לבעלי חיים 👋\nלא מצאתי מוצר בדף. אשלח פירוט / תמונה:');
+document.getElementById('btn-wa-fab').onclick=()=>openWA('שלום מחי פארק — מזון וציוד לבעלי חיים 👋\nאשמח לעזרה בהזמנה.');
+document.getElementById('btn-missing').onclick=()=>openWA('שלום מחי פארק — מזון וציוד לבעלי חיים 👋\nלא מצאתי מוצר בדף. אשלח פירוט / תמונה:');
+function formError(message,field){
+  const el=document.getElementById('form-error');el.textContent=message;el.classList.add('on');
+  if(field){
+    document.querySelector('.field-error')?.remove();
+    const nearby=document.createElement('small');nearby.id='field-error';nearby.className='field-error';nearby.textContent=message;
+    field.insertAdjacentElement('afterend',nearby);
+    field.setAttribute('aria-invalid','true');field.setAttribute('aria-describedby','field-error');field.focus();
+  }else el.focus();
+  return null;
+}
 function buildOrderMsg(){
-  const name=document.getElementById('name').value.trim();
-  const phone=document.getElementById('phone').value.trim();
-  const city=document.getElementById('city').value;
-  const street=document.getElementById('street').value.trim();
+  const nameEl=document.getElementById('name'),phoneEl=document.getElementById('phone'),cityEl=document.getElementById('city'),streetEl=document.getElementById('street');
+  const name=nameEl.value.trim(),phone=phoneEl.value.trim(),city=cityEl.value,street=streetEl.value.trim();
   const entrance=document.getElementById('entrance').value.trim();
   const floor=document.getElementById('floor').value.trim();
-  const notes=document.getElementById('notes').value.trim();
+  const notesEl=document.getElementById('notes'),notes=notesEl.value.trim();
   const ids=Object.keys(cart);
-  if(!ids.length){ alert('הסל ריק'); return null; }
-  if(!name||!phone||!city||!street){ alert('מלאו שם, טלפון, עיר ורחוב'); return null; }
-  const lines=ids.map(id=>{ const p=find(id); return `• מק״ט [${id}] ${p.name} × ${cart[id]} (${p.deal})`; });
-  const est=ids.reduce((s,id)=>{ const p=find(id); const u=Number(p&&p.unit)||0; return s+u*cart[id]; },0);
-  const ship=est>0 && est<150 ? 30 : 0;
+  document.getElementById('form-error').classList.remove('on');
+  document.querySelector('.field-error')?.remove();
+  [nameEl,phoneEl,cityEl,streetEl,notesEl].forEach(x=>{x.removeAttribute('aria-invalid');x.removeAttribute('aria-describedby')});
+  if(!ids.length) return formError('הסל ריק. הוסיפו מוצר לפני שליחת פנייה.');
+  if(!name) return formError('מלאו שם כדי שנוכל לחזור אליכם.',nameEl);
+  if(!/^[+\d\s-]+$/.test(phone)||!/^(?:0\d{8,9}|972\d{8,9})$/.test(phone.replace(/\D/g,''))) return formError('הקלידו מספר טלפון ישראלי תקין.',phoneEl);
+  if(!pickup()&&!city) return formError('בחרו אחת מארבע הקריות למשלוח.',cityEl);
+  if(!pickup()&&!street) return formError('מלאו רחוב ומספר למשלוח.',streetEl);
+  if(ids.some(id=>['p13','p14mix','p14dogiz'].includes(id))&&!notes) return formError('ציינו בהערות את הטעמים והמותגים המבוקשים, או כתבו ״לא משנה״.',notesEl);
+  const lines=ids.map(id=>{const p=find(id);return `• מק״ט [${id}] ${p.name} × ${cart[id]} — ₪${money(priceFor(p,cart[id]))}`;});
+  const est=subtotal();
+  const ship=pickup()||est>150?0:30;
   const grand=est+ship;
-  const estLine=est>0?`סה״כ משוער: ₪${grand % 1 ? grand.toFixed(1) : grand}${ship?` (כולל משלוח ₪30)`:''} (לפני אישור מלאי)`:null;
-  return ['הזמנה — חי פארק מזון וציוד לבעלי חיים','',`שם: ${name}`,`טלפון: ${phone}`,`עיר: ${city}`,`רחוב: ${street}`,entrance?`כניסה: ${entrance}`:null,floor?`קומה: ${floor}`:null,notes?`הערות: ${notes}`:null,'','מוצרים:',...lines,'',estLine,'','תשלום אחרי אישור מלאי.'].filter(v=>v!==null && v!==undefined && v!=='').join('\n');
+  return ['בקשת הזמנה — חי פארק — מזון וציוד לבעלי חיים','',`שם: ${name}`,`טלפון: ${phone}`,`קבלה: ${pickup()?'איסוף עצמי':'משלוח'}`,pickup()?null:`עיר: ${city}`,pickup()?null:`רחוב: ${street}`,!pickup()&&entrance?`כניסה: ${entrance}`:null,!pickup()&&floor?`קומה: ${floor}`:null,notes?`הערות: ${notes}`:null,'','מוצרים:',...lines,'',`מוצרים: ₪${money(est)}`,`משלוח: ₪${ship}`,`סה״כ משוער: ₪${money(grand)}`,'','נא לאשר מלאי, מחיר ומועד קבלה לפני השלמת הזמנה.'].filter(v=>v!==null && v!==undefined && v!=='').join('\n');
 }
 let pendingMsg='';
+let focusBeforeModal=null;
 document.getElementById('btn-send').onclick=()=>{
   const msg=buildOrderMsg(); if(!msg) return;
   pendingMsg=msg;
   document.getElementById('confirm-sum').textContent=msg;
   document.getElementById('confirm-modal').classList.add('on');
+  focusBeforeModal=document.activeElement;
+  document.getElementById('confirm-sum').focus();
 };
-document.getElementById('btn-confirm-cancel').onclick=()=>document.getElementById('confirm-modal').classList.remove('on');
+function closeModal(){document.getElementById('confirm-modal').classList.remove('on');focusBeforeModal?.focus();}
+document.getElementById('btn-confirm-cancel').onclick=closeModal;
+document.getElementById('confirm-modal').addEventListener('keydown',e=>{
+  if(e.key==='Escape') closeModal();
+  if(e.key==='Tab'){
+    const first=document.getElementById('confirm-sum'),last=document.getElementById('btn-confirm-ok');
+    if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+  }
+});
 document.getElementById('btn-confirm-ok').onclick=()=>{
-  document.getElementById('confirm-modal').classList.remove('on');
-  if(pendingMsg) openWA(pendingMsg);
-  show('done');
+  if(!pendingMsg) return;
+  const opened=window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(pendingMsg),'_blank');
+  if(!opened){closeModal();formError('לא הצלחנו לפתוח WhatsApp. נסו שוב או התקשרו אלינו.');return;}
+  closeModal();show('done');
 };
+document.getElementById('btn-reopen-wa').onclick=()=>{if(pendingMsg)openWA(pendingMsg)};
 document.getElementById('btn-done-home').onclick=()=>show('home');
 render();
 </script>
